@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D16C6E7A-F67D-40F6-BF92-72525E4ACAFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AbpDemo.EntityFramework</RootNamespace>
+    <AssemblyName>AbpDemo.EntityFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.LoggingFacility.4.1.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.DynamicFilters, Version=3.0.1.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.DynamicFilters.3.0.1\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbpDemoDataModule.cs" />
+    <Compile Include="EntityFramework\AbpDemoDbContext.cs" />
+    <Compile Include="EntityFramework\Repositories\AbpDemoRepositoryBase.cs" />
+    <Compile Include="EntityFramework\Repositories\BackendTaskRepository.cs" />
+    <Compile Include="Migrations\201707261347311_Initial_Migration.cs" />
+    <Compile Include="Migrations\201707261347311_Initial_Migration.Designer.cs">
+      <DependentUpon>201707261347311_Initial_Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710131316266_UpgradedTo_ABP_3.1.cs" />
+    <Compile Include="Migrations\201710131316266_UpgradedTo_ABP_3.1.Designer.cs">
+      <DependentUpon>201710131316266_UpgradedTo_ABP_3.1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712130312265_Add_Task_Entity.cs" />
+    <Compile Include="Migrations\201712130312265_Add_Task_Entity.Designer.cs">
+      <DependentUpon>201712130312265_Add_Task_Entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712130854180_test.cs" />
+    <Compile Include="Migrations\201712130854180_test.Designer.cs">
+      <DependentUpon>201712130854180_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\SeedData\DefaultEditionsCreator.cs" />
+    <Compile Include="Migrations\SeedData\DefaultLanguagesCreator.cs" />
+    <Compile Include="Migrations\SeedData\DefaultSettingsCreator.cs" />
+    <Compile Include="Migrations\SeedData\DefaultTenantCreator.cs" />
+    <Compile Include="Migrations\SeedData\DefaultTestDataForTask.cs" />
+    <Compile Include="Migrations\SeedData\HostRoleAndUserCreator.cs" />
+    <Compile Include="Migrations\SeedData\InitialHostDbBuilder.cs" />
+    <Compile Include="Migrations\SeedData\TenantRoleAndUserBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Abp.EntityFramework.Common\Abp.EntityFramework.Common.csproj">
+      <Project>{a776fdce-fdd0-46af-b2ae-55cf7d3315ff}</Project>
+      <Name>Abp.EntityFramework.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Abp.EntityFramework\Abp.EntityFramework.csproj">
+      <Project>{51c56751-cedc-40be-86ad-a2a1a6a1a806}</Project>
+      <Name>Abp.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Abp.Zero.Common\Abp.Zero.Common.csproj">
+      <Project>{9cfdfe77-85b0-45c1-81bd-82e5c94963fc}</Project>
+      <Name>Abp.Zero.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Abp.Zero.EntityFramework\Abp.Zero.EntityFramework.csproj">
+      <Project>{5d06415d-aae2-4b6f-9630-4d6b05614e14}</Project>
+      <Name>Abp.Zero.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Abp.Zero\Abp.Zero.csproj">
+      <Project>{425f546c-f2ff-4147-9dbd-6598b7768d19}</Project>
+      <Name>Abp.Zero</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Abp\Abp.csproj">
+      <Project>{486c8629-0e65-47e9-9ba4-8180e682c1f8}</Project>
+      <Name>Abp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbpDemo.Core\AbpDemo.Core.csproj">
+      <Project>{a5448c7f-edb7-4404-8dfe-84b579adb91d}</Project>
+      <Name>AbpDemo.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707261347311_Initial_Migration.resx">
+      <DependentUpon>201707261347311_Initial_Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710131316266_UpgradedTo_ABP_3.1.resx">
+      <DependentUpon>201710131316266_UpgradedTo_ABP_3.1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712130312265_Add_Task_Entity.resx">
+      <DependentUpon>201712130312265_Add_Task_Entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712130854180_test.resx">
+      <DependentUpon>201712130854180_test.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
