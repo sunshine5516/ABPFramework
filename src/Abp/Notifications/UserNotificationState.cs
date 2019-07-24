@@ -1,17 +1,17 @@
 ﻿namespace Abp.Notifications
 {
     /// <summary>
-    /// Represents state of a <see cref="UserNotification"/>.
+    /// 表示UserNotification的状态
     /// </summary>
     public enum UserNotificationState
     {
         /// <summary>
-        /// Notification is not read by user yet.
+        /// 未读
         /// </summary>
         Unread = 0,
 
         /// <summary>
-        /// Notification is read by user.
+        /// 已读.
         /// </summary>
         Read
     }

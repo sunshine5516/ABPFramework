@@ -3,12 +3,12 @@ using Abp.Events.Bus.Handlers;
 namespace Abp.Events.Bus.Factories
 {
     /// <summary>
-    /// Defines an interface for factories those are responsible to create/get and release of event handlers.
+    /// 为负责创建/获取和释放事件处理程序的工厂定义接口。
     /// </summary>
     public interface IEventHandlerFactory
     {
         /// <summary>
-        /// Gets an event handler.
+        /// 获取一个事件处理器.
         /// </summary>
         /// <returns>The event handler</returns>
         IEventHandler GetHandler();

@@ -3,8 +3,7 @@ using Abp.Events.Bus.Handlers;
 namespace Abp.Events.Bus.Factories.Internals
 {
     /// <summary>
-    /// This <see cref="IEventHandlerFactory"/> implementation is used to handle events
-    /// by a single instance object. 
+    /// 用于创建单例EventHandler的工厂
     /// </summary>
     /// <remarks>
     /// This class always gets the same single instance of handler.

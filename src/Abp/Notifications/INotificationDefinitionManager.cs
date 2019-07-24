@@ -15,12 +15,11 @@ namespace Abp.Notifications
 
         /// <summary>
         /// 根据名称获取
-        /// Throws exception if there is no notification definition with given name.
         /// </summary>
         NotificationDefinition Get(string name);
 
         /// <summary>
-        /// Gets a notification definition by name.
+        /// 根据名称获取通知.
         /// </summary>
         NotificationDefinition GetOrNull(string name);
 
@@ -30,12 +29,12 @@ namespace Abp.Notifications
         IReadOnlyList<NotificationDefinition> GetAll();
 
         /// <summary>
-        /// Checks if given notification (<see cref="name"/>) is available for given user.
+        /// 检测给定的名称的通知是否属于用户
         /// </summary>
         Task<bool> IsAvailableAsync(string name, UserIdentifier user);
 
         /// <summary>
-        /// Gets all available notification definitions for given user.
+        /// 获取用户所有的通知信息
         /// </summary>
         /// <param name="user">User.</param>
         Task<IReadOnlyList<NotificationDefinition>> GetAllAvailableAsync(UserIdentifier user);

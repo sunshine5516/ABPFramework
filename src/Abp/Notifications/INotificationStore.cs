@@ -5,77 +5,77 @@ using System.Threading.Tasks;
 namespace Abp.Notifications
 {
     /// <summary>
-    /// Used to store (persist) notifications.
+    /// 提供持久化NotificationInfo的方法.
     /// </summary>
     public interface INotificationStore
     {
         /// <summary>
-        /// Inserts a notification subscription.
+        /// 添加通知订阅
         /// </summary>
         Task InsertSubscriptionAsync(NotificationSubscriptionInfo subscription);
 
         /// <summary>
-        /// Deletes a notification subscription.
+        /// 删除用户订阅通知
         /// </summary>
         Task DeleteSubscriptionAsync(UserIdentifier user, string notificationName, string entityTypeName, string entityId);
 
         /// <summary>
-        /// Inserts a notification.
+        /// 添加通知.
         /// </summary>
         Task InsertNotificationAsync(NotificationInfo notification);
 
         /// <summary>
-        /// Gets a notification by Id, or returns null if not found.
+        /// 根据ID获取通知信息
         /// </summary>
         Task<NotificationInfo> GetNotificationOrNullAsync(Guid notificationId);
 
         /// <summary>
-        /// Inserts a user notification.
+        /// 添加一个用户通知
         /// </summary>
         Task InsertUserNotificationAsync(UserNotificationInfo userNotification);
 
         /// <summary>
-        /// Gets subscriptions for a notification.
+        /// 获取通知的订阅
         /// </summary>
         Task<List<NotificationSubscriptionInfo>> GetSubscriptionsAsync(string notificationName, string entityTypeName, string entityId);
 
         /// <summary>
-        /// Gets subscriptions for a notification for specified tenant(s).
+        /// 获取特定租户通知的订阅.
         /// </summary>
         Task<List<NotificationSubscriptionInfo>> GetSubscriptionsAsync(int?[] tenantIds, string notificationName, string entityTypeName, string entityId);
 
         /// <summary>
-        /// Gets subscriptions for a user.
+        /// 获取用户的所有订阅.
         /// </summary>
         Task<List<NotificationSubscriptionInfo>> GetSubscriptionsAsync(UserIdentifier user);
 
         /// <summary>
-        /// Checks if a user subscribed for a notification
+        /// 检测某个用户是否订阅了某个通知
         /// </summary>
         Task<bool> IsSubscribedAsync(UserIdentifier user, string notificationName, string entityTypeName, string entityId);
 
         /// <summary>
-        /// Updates a user notification state.
+        /// 更新用户订阅状态
         /// </summary>
         Task UpdateUserNotificationStateAsync(int? tenantId, Guid userNotificationId, UserNotificationState state);
 
         /// <summary>
-        /// Updates all notification states for a user.
+        /// 更新用户的所有订阅状态
         /// </summary>
         Task UpdateAllUserNotificationStatesAsync(UserIdentifier user, UserNotificationState state);
 
         /// <summary>
-        /// Deletes a user notification.
+        /// 删除用户的通知.
         /// </summary>
         Task DeleteUserNotificationAsync(int? tenantId, Guid userNotificationId);
 
         /// <summary>
-        /// Deletes all notifications of a user.
+        /// 删除用户的所有通知.
         /// </summary>
         Task DeleteAllUserNotificationsAsync(UserIdentifier user);
 
         /// <summary>
-        /// Gets notifications of a user.
+        /// 获取用户通知
         /// </summary>
         /// <param name="user">User.</param>
         /// <param name="skipCount">Skip count.</param>
@@ -84,26 +84,26 @@ namespace Abp.Notifications
         Task<List<UserNotificationInfoWithNotificationInfo>> GetUserNotificationsWithNotificationsAsync(UserIdentifier user, UserNotificationState? state = null, int skipCount = 0, int maxResultCount = int.MaxValue);
 
         /// <summary>
-        /// Gets user notification count.
+        /// 获取用户通知的数量.
         /// </summary>
         /// <param name="user">User.</param>
         /// <param name="state">The state.</param>
         Task<int> GetUserNotificationCountAsync(UserIdentifier user, UserNotificationState? state = null);
 
         /// <summary>
-        /// Gets a user notification.
+        /// 获取用户通知
         /// </summary>
         /// <param name="tenantId">Tenant Id</param>
         /// <param name="userNotificationId">Skip count.</param>
         Task<UserNotificationInfoWithNotificationInfo> GetUserNotificationWithNotificationOrNullAsync(int? tenantId, Guid userNotificationId);
 
         /// <summary>
-        /// Inserts notification for a tenant.
+        /// 添加租户通知
         /// </summary>
         Task InsertTenantNotificationAsync(TenantNotificationInfo tenantNotificationInfo);
 
         /// <summary>
-        /// Deletes the notification.
+        /// 删除通知
         /// </summary>
         /// <param name="notification">The notification.</param>
         Task DeleteNotificationAsync(NotificationInfo notification);

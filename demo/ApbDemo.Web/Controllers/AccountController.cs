@@ -73,6 +73,7 @@ namespace AbpDemo.Web.Controllers
 
         public ActionResult Login(string returnUrl = "")
         {
+            _unitOfWorkManager.Current.EnableFilter(AbpDataFilters.MayHaveTenant);
             if (string.IsNullOrWhiteSpace(returnUrl))
             {
                 returnUrl = Request.ApplicationPath;
@@ -92,7 +93,8 @@ namespace AbpDemo.Web.Controllers
 
         [HttpPost]
         [DisableAuditing]
-        public async Task<JsonResult> Login(LoginViewModel loginModel, string returnUrl = "", string returnUrlHash = "")
+        public async Task<JsonResult> Login(LoginViewModel loginModel,
+            string returnUrl = "", string returnUrlHash = "")
         {
             CheckModelState();
 
@@ -178,6 +180,7 @@ namespace AbpDemo.Web.Controllers
 
         public ActionResult Register()
         {
+            //_unitOfWorkManager.Current.EnableFilter(AbpDataFilters.MayHaveTenant);
             return RegisterView(new RegisterViewModel());
         }
 
@@ -259,7 +262,7 @@ namespace AbpDemo.Web.Controllers
 
                 //Switch to the tenant
                 _unitOfWorkManager.Current.EnableFilter(AbpDataFilters.MayHaveTenant); //TODO: Needed?
-                _unitOfWorkManager.Current.SetTenantId(AbpSession.GetTenantId());
+                //_unitOfWorkManager.Current.SetTenantId(AbpSession.GetTenantId());
 
                 //Add default roles
                 user.Roles = new List<UserRole>();
@@ -278,7 +281,8 @@ namespace AbpDemo.Web.Controllers
                     AbpLoginResult<Tenant, User> loginResult;
                     if (externalLoginInfo != null)
                     {
-                        loginResult = await _logInManager.LoginAsync(externalLoginInfo.Login, GetTenancyNameOrNull());
+                        loginResult = await _logInManager.LoginAsync(externalLoginInfo.Login,
+                            GetTenancyNameOrNull());
                     }
                     else
                     {

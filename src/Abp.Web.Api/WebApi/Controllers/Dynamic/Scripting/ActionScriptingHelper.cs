@@ -31,7 +31,8 @@ namespace Abp.WebApi.Controllers.Dynamic.Scripting
 
         public static string GenerateJsMethodParameterList(MethodInfo methodInfo, string ajaxParametersName)
         {
-            var paramNames = methodInfo.GetParameters().Select(prm => prm.Name.ToCamelCase()).ToList();
+            var paramNames = methodInfo.GetParameters().Select
+                (prm => prm.Name.ToCamelCase()).ToList();
             paramNames.Add(ajaxParametersName);
             return string.Join(", ", paramNames);
         }

@@ -31,7 +31,7 @@ using Castle.Core.Logging;
 namespace Abp.Web.Mvc.Controllers
 {
     /// <summary>
-    /// Base class for all MVC Controllers in Abp system.
+    /// 框架Controllers基类.
     /// </summary>
     public abstract class AbpController : Controller
     {
@@ -81,7 +81,7 @@ namespace Abp.Web.Mvc.Controllers
         public IErrorInfoBuilder ErrorInfoBuilder { protected get; set; }
 
         /// <summary>
-        /// Gets/sets name of the localization source that is used in this application service.
+        /// 本地资源名称
         /// It must be set in order to use <see cref="L(string)"/> and <see cref="L(string,CultureInfo)"/> methods.
         /// </summary>
         protected string LocalizationSourceName { get; set; }
@@ -138,14 +138,14 @@ namespace Abp.Web.Mvc.Controllers
         private IUnitOfWorkManager _unitOfWorkManager;
 
         /// <summary>
-        /// Gets current unit of work.
+        /// 获取当前UOW
         /// </summary>
         protected IActiveUnitOfWork CurrentUnitOfWork { get { return UnitOfWorkManager.Current; } }
 
         public IAbpMvcConfiguration AbpMvcConfiguration { get; set; }
 
         /// <summary>
-        /// MethodInfo for currently executing action.
+        /// 当前正在执行的操作信息
         /// </summary>
         private MethodInfo _currentMethodInfo;
 
@@ -251,7 +251,7 @@ namespace Abp.Web.Mvc.Controllers
         }
 
         /// <summary>
-        /// Json the specified data, contentType, contentEncoding and behavior.
+        /// Json序列化.
         /// </summary>
         /// <param name="data">Data.</param>
         /// <param name="contentType">Content type.</param>
@@ -334,8 +334,8 @@ namespace Abp.Web.Mvc.Controllers
                 throw new ArgumentNullException(nameof(context));
             }
 
-            //If exception handled before, do nothing.
-            //If this is child action, exception should be handled by main action.
+            //如果异常已经处理，则什么都不做
+            //如果这是子操作，则应由主操作处理异常。
             if (context.ExceptionHandled || context.IsChildAction)
             {
                 base.OnException(context);
@@ -348,8 +348,8 @@ namespace Abp.Web.Mvc.Controllers
                 LogHelper.LogException(Logger, context.Exception);
             }
 
-            // If custom errors are disabled, we need to let the normal ASP.NET exception handler
-            // execute so that the user can see useful debugging information.
+            // 如果禁用了自定义错误，我们需要让普通的ASP.NET异常处理程序
+            //执行以便用户可以看到有用的调试信息。
             if (!context.HttpContext.IsCustomErrorEnabled)
             {
                 base.OnException(context);

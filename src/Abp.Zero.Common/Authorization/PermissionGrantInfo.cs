@@ -16,7 +16,7 @@
         public bool IsGranted { get; private set; }
 
         /// <summary>
-        /// Creates a new instance of <see cref="PermissionGrantInfo"/>.
+        /// 构造函数
         /// </summary>
         /// <param name="name"></param>
         /// <param name="isGranted"></param>

@@ -4,7 +4,6 @@ using Abp.Application.Services.Dto;
 using Abp.Web.Mvc.Authorization;
 using AbpDemo.Authorization;
 using AbpDemo.MultiTenancy;
-
 namespace AbpDemo.Web.Controllers
 {
     [AbpMvcAuthorize(PermissionNames.Pages_Tenants)]

@@ -4,12 +4,12 @@ using Abp.Collections;
 namespace Abp.Configuration.Startup
 {
     /// <summary>
-    /// Used to configure authorization system.
+    /// 用于配置授权系统
     /// </summary>
     public interface IAuthorizationConfiguration
     {
         /// <summary>
-        /// List of authorization providers.
+        /// 授权提供列表。
         /// </summary>
         ITypeList<AuthorizationProvider> Providers { get; }
 

@@ -1,7 +1,7 @@
 namespace Abp.Configuration
 {
     /// <summary>
-    /// Implements methods to convert objects between SettingInfo and Setting classes.
+    /// 实现在SettingInfo和Setting类之间转换对象的方法。
     /// </summary>
     internal static class SettingExtensions
     {

@@ -3,7 +3,7 @@
 namespace Abp.Notifications
 {
     /// <summary>
-    /// Used to configure notification system.
+    /// notification配置.
     /// </summary>
     public interface INotificationConfiguration
     {

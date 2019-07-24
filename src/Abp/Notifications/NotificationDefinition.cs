@@ -8,7 +8,7 @@ using Abp.Localization;
 namespace Abp.Notifications
 {
     /// <summary>
-    /// Definition for a notification.
+    /// 封装Notification Definnition 的信息.
     /// </summary>
     public class NotificationDefinition
     {
@@ -59,8 +59,8 @@ namespace Abp.Notifications
         }
 
         /// <summary>
-        /// Arbitrary objects related to this object.
-        /// These objects must be serializable.
+        /// 与此对象相关的任意对象
+        /// 对象必须是可序列化的
         /// </summary>
         public IDictionary<string, object> Attributes { get; private set; }
 

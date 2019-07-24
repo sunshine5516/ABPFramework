@@ -23,7 +23,6 @@ namespace AbpDemo
         {
             LocalizationSourceName = AbpDemoConsts.LocalizationSourceName;
         }
-
         protected virtual Task<User> GetCurrentUserAsync()
         {
             var user = UserManager.FindByIdAsync(AbpSession.GetUserId());

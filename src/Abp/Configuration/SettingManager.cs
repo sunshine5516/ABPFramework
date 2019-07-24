@@ -11,7 +11,7 @@ using Abp.Runtime.Session;
 namespace Abp.Configuration
 {
     /// <summary>
-    /// This class implements <see cref="ISettingManager"/> to manage setting values in the database.
+    /// 实现<see cref="ISettingManager"/>接口，管理数据库中的设置值.
     /// </summary>
     public class SettingManager : ISettingManager, ISingletonDependency
     {

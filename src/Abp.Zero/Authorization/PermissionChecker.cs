@@ -9,7 +9,7 @@ using Castle.Core.Logging;
 namespace Abp.Authorization
 {
     /// <summary>
-    /// Application should inherit this class to implement <see cref="IPermissionChecker"/>.
+    /// 应用程序应继承此类来实现 <see cref="IPermissionChecker"/>.
     /// </summary>
     /// <typeparam name="TRole"></typeparam>
     /// <typeparam name="TUser"></typeparam>

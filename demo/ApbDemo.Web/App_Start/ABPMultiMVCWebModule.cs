@@ -3,20 +3,15 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Abp.Hangfire;
-using Abp.Hangfire.Configuration;
 using Abp.Zero.Configuration;
 using Abp.Modules;
 using Abp.Web.Mvc;
 using Abp.Web.SignalR;
-using AbpDemo.Api;
 using Castle.MicroKernel.Registration;
-using Hangfire;
 using Microsoft.Owin.Security;
 using System;
 using AbpDemo.WebApi.Api;
 using Abp.Runtime.Caching.Redis;
-
 namespace AbpDemo.Web
 {
     [DependsOn(
@@ -32,7 +27,7 @@ namespace AbpDemo.Web
         public override void PreInitialize()
         {
             //配置使用Redis缓存
-            Configuration.Caching.UseRedis();
+            //Configuration.Caching.UseRedis();
             //Configuration.Caching.Configure.
             //Enable database based localization
             Configuration.Modules.Zero().LanguageManagement.EnableDbLocalization();
@@ -47,6 +42,9 @@ namespace AbpDemo.Web
              {
                  cache.DefaultSlidingExpireTime = TimeSpan.FromMinutes(10);
              });
+            //配置使用Redis缓存
+            //IocManager.Register<ICacheManager, AbpRedisCacheManager>();
+            Configuration.Caching.UseRedis();
             //Configure Hangfire - ENABLE TO USE HANGFIRE INSTEAD OF DEFAULT JOB MANAGER
             //Configuration.BackgroundJobs.UseHangfire(configuration =>
             //{

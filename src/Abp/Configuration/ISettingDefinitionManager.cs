@@ -9,7 +9,7 @@ namespace Abp.Configuration
     public interface ISettingDefinitionManager
     {
         /// <summary>
-        /// 获取具有给定唯一名称的<see cref =“SettingDefinition”/>对象。
+        /// 获取具有给定唯一名称的<see cref ="SettingDefinition"/>对象。
         /// 如果找不到设置，则抛出异常。
         /// </summary>
         /// <param name="name">setting的唯一名称</param>

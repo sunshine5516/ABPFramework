@@ -10,5 +10,7 @@ namespace AbpDemo.Application.Users
     public interface ITestService : IApplicationService
     {
         void GettestMethod();
+        void Test();
+        string GetAll();
     }
 }

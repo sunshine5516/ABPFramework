@@ -8,7 +8,7 @@ using Abp.WebApi.Controllers.Dynamic.Formatters;
 namespace Abp.WebApi.Controllers.Dynamic.Scripting
 {
     /// <summary>
-    /// This class is used to create proxies to call dynamic api methods from Javascript clients.
+    /// 此类用于创建代理以从Javascript客户端调用动态api方法。
     /// </summary>
     [DontWrapResult]
     [DisableAuditing]
@@ -23,9 +23,9 @@ namespace Abp.WebApi.Controllers.Dynamic.Scripting
         }
 
         /// <summary>
-        /// Gets javascript proxy for given service name.
+        /// 获取给定服务名称的javascript代理。
         /// </summary>
-        /// <param name="name">Name of the service</param>
+        /// <param name="name">服务名称</param>
         /// <param name="type">Script type</param>
         public HttpResponseMessage Get(string name, ProxyScriptType type = ProxyScriptType.JQuery)
         {
@@ -36,7 +36,7 @@ namespace Abp.WebApi.Controllers.Dynamic.Scripting
         }
 
         /// <summary>
-        /// Gets javascript proxy for all services.
+        /// 获取所有服务的javascript代理。
         /// </summary>
         /// <param name="type">Script type</param>
         public HttpResponseMessage GetAll(ProxyScriptType type = ProxyScriptType.JQuery)

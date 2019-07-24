@@ -17,8 +17,8 @@ using Microsoft.AspNet.Identity;
 namespace Abp.Authorization.Roles
 {
     /// <summary>
-    /// Extends <see cref="RoleManager{TRole,TKey}"/> of ASP.NET Identity Framework.
-    /// Applications should derive this class with appropriate generic arguments.
+    /// 实现ASP.NET Identity Framework <see cref="RoleManager{TRole,TKey}"/>类.
+    /// 应该使用适当的泛型参数派生此类
     /// </summary>
     public abstract class AbpRoleManager<TRole, TUser>
         : RoleManager<TRole, int>,
@@ -108,14 +108,14 @@ namespace Abp.Authorization.Roles
         }
 
         /// <summary>
-        /// Checks if a role is granted for a permission.
+        /// 检查某个角色是否有某个权限
         /// </summary>
-        /// <param name="roleId">role id</param>
-        /// <param name="permission">The permission</param>
-        /// <returns>True, if the role has the permission</returns>
+        /// <param name="roleId">角色ID</param>
+        /// <param name="permission">权限</param>
+        /// <returns>如果有，返回true</returns>
         public virtual async Task<bool> IsGrantedAsync(int roleId, Permission permission)
         {
-            //Get cached role permissions
+            //获取缓存的权限
             var cacheItem = await GetRolePermissionCacheItemAsync(roleId);
 
             //Check the permission
@@ -143,7 +143,7 @@ namespace Abp.Authorization.Roles
         }
 
         /// <summary>
-        /// Gets granted permissions for a role.
+        /// 获取角色的授予权限。
         /// </summary>
         /// <param name="role">Role</param>
         /// <returns>List of granted permissions</returns>
@@ -174,8 +174,8 @@ namespace Abp.Authorization.Roles
         }
 
         /// <summary>
-        /// Sets all granted permissions of a role at once.
-        /// Prohibits all other permissions.
+        /// 一次设置角色的所有已授予权限。
+        /// 禁止所有其他权限。
         /// </summary>
         /// <param name="role">The role</param>
         /// <param name="permissions">Permissions</param>
@@ -196,7 +196,7 @@ namespace Abp.Authorization.Roles
         }
 
         /// <summary>
-        /// Grants a permission for a role.
+        /// 角色添加权限
         /// </summary>
         /// <param name="role">Role</param>
         /// <param name="permission">Permission</param>
@@ -211,7 +211,7 @@ namespace Abp.Authorization.Roles
         }
 
         /// <summary>
-        /// Prohibits a permission for a role.
+        /// 禁止角色的许可。.
         /// </summary>
         /// <param name="role">Role</param>
         /// <param name="permission">Permission</param>
@@ -313,10 +313,10 @@ namespace Abp.Authorization.Roles
         }
 
         /// <summary>
-        /// Gets a role by given name.
-        /// Throws exception if no role with given roleName.
+        /// 根据角色名称获取角色.
+        /// 如果无则抛出异常.
         /// </summary>
-        /// <param name="roleName">Role name</param>
+        /// <param name="roleName">角色名称</param>
         /// <returns>Role</returns>
         /// <exception cref="AbpException">Throws exception if no role with given roleName</exception>
         public virtual async Task<TRole> GetRoleByNameAsync(string roleName)

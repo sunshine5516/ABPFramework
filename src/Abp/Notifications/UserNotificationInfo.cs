@@ -8,7 +8,7 @@ using Abp.Timing;
 namespace Abp.Notifications
 {
     /// <summary>
-    /// Used to store a user notification.
+    /// 用于存储用户通知。
     /// </summary>
     [Serializable]
     [Table("AbpUserNotifications")]

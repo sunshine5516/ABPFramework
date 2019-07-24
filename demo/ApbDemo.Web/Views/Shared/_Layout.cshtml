@@ -121,7 +121,7 @@
         moment.locale('@Thread.CurrentThread.CurrentUICulture.Name');
     </script>
 
-    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    <!-- ABP系统的动态脚本（它们是在运行时创建的，不能捆绑-->
     <script src="~/api/AbpServiceProxies/GetAll?v=@(Clock.Now.Ticks)"></script>
     <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
 

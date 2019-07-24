@@ -4,34 +4,34 @@ using System.Threading.Tasks;
 namespace Abp.Authorization.Users
 {
     /// <summary>
-    /// Used to perform permission database operations for a user.
+    /// 为用户执行权限数据库操作。
     /// </summary>
     public interface IUserPermissionStore<in TUser>
         where TUser : AbpUserBase
     {
         /// <summary>
-        /// Adds a permission grant setting to a user.
+        /// 向用户添加权限授予设置.
         /// </summary>
         /// <param name="user">User</param>
         /// <param name="permissionGrant">Permission grant setting info</param>
         Task AddPermissionAsync(TUser user, PermissionGrantInfo permissionGrant);
 
         /// <summary>
-        /// Removes a permission grant setting from a user.
+        /// 删除用户权限授予
         /// </summary>
         /// <param name="user">User</param>
         /// <param name="permissionGrant">Permission grant setting info</param>
         Task RemovePermissionAsync(TUser user, PermissionGrantInfo permissionGrant);
 
         /// <summary>
-        /// Gets permission grant setting informations for a user.
+        /// 获取用户权限信息
         /// </summary>
         /// <param name="userId">User id</param>
         /// <returns>List of permission setting informations</returns>
         Task<IList<PermissionGrantInfo>> GetPermissionsAsync(long userId);
 
         /// <summary>
-        /// Checks whether a role has a permission grant setting info.
+        /// 检测角色是否有权限
         /// </summary>
         /// <param name="userId">User id</param>
         /// <param name="permissionGrant">Permission grant setting info</param>
@@ -39,7 +39,7 @@ namespace Abp.Authorization.Users
         Task<bool> HasPermissionAsync(long userId, PermissionGrantInfo permissionGrant);
 
         /// <summary>
-        /// Deleted all permission settings for a role.
+        /// 删除角色的所有权限
         /// </summary>
         /// <param name="user">User</param>
         Task RemoveAllPermissionSettingsAsync(TUser user);

@@ -3,7 +3,7 @@
 namespace Abp.Web.Models
 {
     /// <summary>
-    /// Used to determine how ABP should wrap response on the web layer.
+    /// 用于确定ABP应如何在Web层上包装响应。
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface | AttributeTargets.Method)]
     public class WrapResultAttribute : Attribute
@@ -25,7 +25,7 @@ namespace Abp.Web.Models
         public bool LogError { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WrapResultAttribute"/> class.
+        /// 构造函数
         /// </summary>
         /// <param name="wrapOnSuccess">Wrap result on success.</param>
         /// <param name="wrapOnError">Wrap result on error.</param>

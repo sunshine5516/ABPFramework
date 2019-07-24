@@ -5,10 +5,7 @@ using AbpDemo.Authorization;
 namespace AbpDemo.Web
 {
     /// <summary>
-    /// This class defines menus for the application.
-    /// It uses ABP's menu system.
-    /// When you add menu items here, they are automatically appear in angular application.
-    /// See Views/Layout/_TopMenu.cshtml file to know how to render menu.
+    /// 定义菜单导航
     /// </summary>
     public class ABPMultiMVCNavigationProvider : NavigationProvider
     {

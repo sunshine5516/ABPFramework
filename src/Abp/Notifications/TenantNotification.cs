@@ -6,7 +6,7 @@ using Abp.Timing;
 namespace Abp.Notifications
 {
     /// <summary>
-    /// Represents a published notification for a tenant/user.
+    /// 表示租户/用户的已发布通知。
     /// </summary>
     [Serializable]
     public class TenantNotification : EntityDto<Guid>, IHasCreationTime
@@ -17,22 +17,22 @@ namespace Abp.Notifications
         public int? TenantId { get; set; }
 
         /// <summary>
-        /// Unique notification name.
+        /// 唯一名称.
         /// </summary>
         public string NotificationName { get; set; }
 
         /// <summary>
-        /// Notification data.
+        /// 通知数据.
         /// </summary>
         public NotificationData Data { get; set; }
 
         /// <summary>
-        /// Gets or sets the type of the entity.
+        /// 试题类型.
         /// </summary>
         public Type EntityType { get; set; }
 
         /// <summary>
-        /// Name of the entity type (including namespaces).
+        /// 实体类型名称.
         /// </summary>
         public string EntityTypeName { get; set; }
 
@@ -42,14 +42,14 @@ namespace Abp.Notifications
         public object EntityId { get; set; }
 
         /// <summary>
-        /// Severity.
+        /// 等级.
         /// </summary>
         public NotificationSeverity Severity { get; set; }
 
         public DateTime CreationTime { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TenantNotification"/> class.
+        /// 构造函数
         /// </summary>
         public TenantNotification()
         {

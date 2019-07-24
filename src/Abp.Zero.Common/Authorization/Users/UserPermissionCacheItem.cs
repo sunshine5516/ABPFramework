@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Abp.Authorization.Users
 {
     /// <summary>
-    /// Used to cache roles and permissions of a user.
+    /// 用于缓存用户的角色和权限
     /// </summary>
     [Serializable]
     public class UserPermissionCacheItem

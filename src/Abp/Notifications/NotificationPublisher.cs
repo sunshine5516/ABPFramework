@@ -20,7 +20,7 @@ namespace Abp.Notifications
         public const int MaxUserCountToDirectlyDistributeANotification = 5;
 
         /// <summary>
-        /// Indicates all tenants.
+        /// 所有租户.
         /// </summary>
         public static int[] AllTenants
         {
@@ -41,7 +41,7 @@ namespace Abp.Notifications
         private readonly IGuidGenerator _guidGenerator;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NotificationPublisher"/> class.
+        /// 构造函数
         /// </summary>
         public NotificationPublisher(
             INotificationStore store,
@@ -99,7 +99,6 @@ namespace Abp.Notifications
             await _store.InsertNotificationAsync(notificationInfo);
 
             await CurrentUnitOfWork.SaveChangesAsync(); //To get Id of the notification
-
             if (userIds != null && userIds.Length <= MaxUserCountToDirectlyDistributeANotification)
             {
                 //We can directly distribute the notification since there are not much receivers

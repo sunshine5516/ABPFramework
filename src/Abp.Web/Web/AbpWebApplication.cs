@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Web;
-using Abp.Dependency;
 using Abp.Modules;
 using Abp.Threading;
-using Abp.Web.Localization;
-
 namespace Abp.Web
 {
     /// <summary>
@@ -68,7 +65,7 @@ namespace Abp.Web
 
         protected virtual void SetCurrentCulture()
         {
-            AbpBootstrapper.IocManager.Using<ICurrentCultureSetter>(cultureSetter => cultureSetter.SetCurrentCulture(Context));
+            //AbpBootstrapper.IocManager.Using<ICurrentCultureSetter>(cultureSetter => cultureSetter.SetCurrentCulture(Context));
         }
     }
 }

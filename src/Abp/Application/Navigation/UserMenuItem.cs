@@ -29,7 +29,7 @@ namespace Abp.Application.Navigation
         public int Order { get; set; }
 
         /// <summary>
-        /// The URL to navigate when this menu item is selected.
+        /// 选择此菜单项时要导航的URL。
         /// </summary>
         public string Url { get; set; }
 
@@ -59,7 +59,7 @@ namespace Abp.Application.Navigation
         public IList<UserMenuItem> Items { get; private set; }
 
         /// <summary>
-        /// Creates a new <see cref="UserMenuItem"/> object.
+        /// 构造函数
         /// </summary>
         public UserMenuItem()
         {
@@ -67,7 +67,7 @@ namespace Abp.Application.Navigation
         }
 
         /// <summary>
-        /// Creates a new <see cref="UserMenuItem"/> object from given <see cref="MenuItemDefinition"/>.
+        /// 构造函数
         /// </summary>
         internal UserMenuItem(MenuItemDefinition menuItemDefinition, ILocalizationContext localizationContext)
         {

@@ -5,24 +5,24 @@ using Abp.Extensions;
 namespace Abp
 {
     /// <summary>
-    /// Used to identify a user.
+    /// 用户标识.
     /// </summary>
     [Serializable]
     public class UserIdentifier : IUserIdentifier
     {
         /// <summary>
-        /// Tenant Id of the user.
+        /// 用户的租户ID.
         /// Can be null for host users in a multi tenant application.
         /// </summary>
         public int? TenantId { get; protected set; }
 
         /// <summary>
-        /// Id of the user.
+        /// 用户ID.
         /// </summary>
         public long UserId { get; protected set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserIdentifier"/> class.
+        /// 构造函数
         /// </summary>
         protected UserIdentifier()
         {
@@ -30,10 +30,10 @@ namespace Abp
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserIdentifier"/> class.
+        /// 构造函数
         /// </summary>
-        /// <param name="tenantId">Tenant Id of the user.</param>
-        /// <param name="userId">Id of the user.</param>
+        /// <param name="tenantId">租户ID.</param>
+        /// <param name="userId">用户ID.</param>
         public UserIdentifier(int? tenantId, long userId)
         {
             TenantId = tenantId;
@@ -41,7 +41,7 @@ namespace Abp
         }
 
         /// <summary>
-        /// Parses given string and creates a new <see cref="UserIdentifier"/> object.
+        /// 解析给出字符串创建实例.
         /// </summary>
         /// <param name="userIdentifierString">
         /// Should be formatted one of the followings:
@@ -72,7 +72,7 @@ namespace Abp
         }
 
         /// <summary>
-        /// Creates a string represents this <see cref="UserIdentifier"/> instance.
+        /// 创建一个字符串表示此<see cref ="UserIdentifier"/>实例。
         /// Formatted one of the followings:
         /// 
         /// - "userId@tenantId". Ex: "42@3" (for tenant users).

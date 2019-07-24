@@ -29,8 +29,9 @@ namespace Abp.Dapper.Filters.Query
                 predicate = filter.ExecuteFilter<TEntity, TPrimaryKey>(predicate);
             }
 
-            IPredicate pg = predicate.ToPredicateGroup<TEntity, TPrimaryKey>();
-            return pg;
+            //IPredicate pg = predicate.ToPredicateGroup<TEntity, TPrimaryKey>();
+            //return pg;
+            return null;
         }
 
         public PredicateGroup ExecuteFilter<TEntity, TPrimaryKey>() where TEntity : class, IEntity<TPrimaryKey>

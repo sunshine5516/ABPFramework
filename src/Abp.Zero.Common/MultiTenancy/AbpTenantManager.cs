@@ -19,11 +19,11 @@ using Abp.Zero;
 namespace Abp.MultiTenancy
 {
     /// <summary>
-    /// Tenant manager.
-    /// Implements domain logic for <see cref="AbpTenant{TUser}"/>.
+    /// 租户管理.
+    /// 实现域逻辑 for <see cref="AbpTenant{TUser}"/>.
     /// </summary>
-    /// <typeparam name="TTenant">Type of the application Tenant</typeparam>
-    /// <typeparam name="TUser">Type of the application User</typeparam>
+    /// <typeparam name="TTenant">租户的类型</typeparam>
+    /// <typeparam name="TUser">用户的类型</typeparam>
     public class AbpTenantManager<TTenant, TUser> : IDomainService,
         IEventHandler<EntityChangedEventData<TTenant>>,
         IEventHandler<EntityDeletedEventData<Edition>>

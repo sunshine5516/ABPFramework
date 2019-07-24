@@ -14,86 +14,85 @@ namespace Abp.Configuration
         /// 获取设置值
         /// </summary>
         /// <param name="name">唯一名称</param>
-        /// <returns>当前setting</returns>
+        /// <returns>当前setting值</returns>
         Task<string> GetSettingValueAsync(string name);
 
         /// <summary>
         /// 获取应用程序级别的当前设置值。
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
-        /// <returns>Current value of the setting for the application</returns>
+        /// <param name="name">唯一名称</param>
+        /// <returns>当前setting值</returns>
         Task<string> GetSettingValueForApplicationAsync(string name);
 
         /// <summary>
-        /// Gets current value of a setting for the application level.
-        /// If fallbackToDefault is false, it just gets value from application and returns null if application has not defined a value for the setting.
+        /// 获取应用程序级别的当前设置值
+        /// 如果fallbackToDefault为false，它只是从应用程序获取值，如果应用程序尚未为该设置定义值，则返回null。
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
+        /// <param name="name">唯一名称</param>
         /// <param name="fallbackToDefault"></param>
-        /// <returns>Current value of the setting for the application</returns>
+        /// <returns>当前setting值</returns>
         Task<string> GetSettingValueForApplicationAsync(string name, bool fallbackToDefault);
 
         /// <summary>
-        /// Gets current value of a setting for a tenant level.
-        /// It gets the setting value, overwritten by given tenant.
+        /// 获取租户级别当前的设置的值。
+        /// 由给定的租户重写。
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
+        /// <param name="name">唯一名称</param>
         /// <param name="tenantId">Tenant id</param>
-        /// <returns>Current value of the setting</returns>
+        /// <returns>当前setting值</returns>
         Task<string> GetSettingValueForTenantAsync(string name, int tenantId);
 
         /// <summary>
-        /// Gets current value of a setting for a tenant level.
-        /// It gets the setting value, overwritten by given tenant if fallbackToDefault is true.
-        /// If fallbackToDefault is false, it just gets value from tenant and returns null if tenant has not defined a value for the setting.
+        /// 获取租户级别当前的设置的值
+        /// 如果fallbackToDefault为false，它只是从租户获取值，如果应用程序尚未为该设置定义值，则返回null。
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
+        /// <param name="name">唯一名称</param>
         /// <param name="tenantId">Tenant id</param>
         /// <param name="fallbackToDefault"></param>
-        /// <returns>Current value of the setting</returns>
+        /// <returns>当前setting值</returns>
         Task<string> GetSettingValueForTenantAsync(string name, int tenantId, bool fallbackToDefault);
 
         /// <summary>
-        /// Gets current value of a setting for a user level.
-        /// It gets the setting value, overwritten by given tenant and user.
+        /// 获取用户级别当前的设置的值
+        /// 由给定的租户、用户重写
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
+        /// <param name="name">唯一名称</param>
         /// <param name="tenantId">Tenant id</param>
         /// <param name="userId">User id</param>
-        /// <returns>Current value of the setting for the user</returns>
+        /// <returns>当前setting值</returns>
         Task<string> GetSettingValueForUserAsync(string name, int? tenantId, long userId);
 
         /// <summary>
-        /// Gets current value of a setting for a user level.
-        /// It gets the setting value, overwritten by given tenant and user if fallbackToDefault is true.
-        /// If fallbackToDefault is false, it just gets value from user and returns null if user has not defined a value for the setting.
+        /// 获取用户级别当前的设置的值.
+        /// 如果fallbackToDefault为真 由给定的租户、用户重写.
+        /// 如果fallbackToDefault为假, 它只是从用户获取值，如果用户没有为该设置定义值，则返回null.
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
+        /// <param name="name">唯一名称</param>
         /// <param name="tenantId">Tenant id</param>
         /// <param name="userId">User id</param>
         /// <param name="fallbackToDefault"></param>
-        /// <returns>Current value of the setting for the user</returns>
+        /// <returns>当前setting值</returns>
         Task<string> GetSettingValueForUserAsync(string name, int? tenantId, long userId, bool fallbackToDefault);
 
         /// <summary>
-        /// Gets current value of a setting for a user level.
-        /// It gets the setting value, overwritten by given tenant and user.
+        /// 获取用户级别当前的设置的值
+        /// 由给定的租户、用户重写
         /// </summary>
-        /// <param name="name">Unique name of the setting</param>
-        /// <param name="user">User</param>
-        /// <returns>Current value of the setting for the user</returns>
+        /// <param name="name">唯一名称</param>
+        /// <param name="user">用户</param>
+        /// <returns>当前setting值</returns>
         Task<string> GetSettingValueForUserAsync(string name, UserIdentifier user);
 
         /// <summary>
-        /// Gets current values of all settings.
-        /// It gets all setting values, overwritten by application, current tenant (if exists) and the current user (if exists).
+        /// 获取所有设置的当前值。
+        /// 设置值，由应用程序，当前租户（如果存在）和当前用户（如果存在）重写。
         /// </summary>
         /// <returns>List of setting values</returns>
         Task<IReadOnlyList<ISettingValue>> GetAllSettingValuesAsync();
 
         /// <summary>
-        /// Gets current values of all settings.
-        /// It gets default values of all settings then overwrites by given scopes.
+        /// 获取所有设置的当前值。
+        /// 设置值，由应用程序，当前租户（如果存在）和当前用户（如果存在）重写。
         /// </summary>
         /// <param name="scopes">One or more scope to overwrite</param>
         /// <returns>List of setting values</returns>

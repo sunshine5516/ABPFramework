@@ -9,7 +9,7 @@ namespace Abp.Application.Navigation
     public abstract class NavigationProvider : ITransientDependency
     {
         /// <summary>
-        /// Used to set navigation.
+        /// 设置导航
         /// </summary>
         /// <param name="context">Navigation context</param>
         public abstract void SetNavigation(INavigationProviderContext context);

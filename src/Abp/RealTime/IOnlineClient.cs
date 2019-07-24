@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Abp.RealTime
 {
     /// <summary>
-    /// Represents an online client connected to the application.
+    /// 连接到应用程序的在线客户端。
     /// </summary>
     public interface IOnlineClient
     {

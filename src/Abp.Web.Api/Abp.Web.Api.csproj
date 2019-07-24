@@ -20,6 +20,10 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Include="bin\Release\net461\Abp.Web.Api.pdb">
       <PackagePath>lib/net461/</PackagePath>

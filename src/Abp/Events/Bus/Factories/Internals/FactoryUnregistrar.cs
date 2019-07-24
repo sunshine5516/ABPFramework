@@ -3,7 +3,7 @@ using System;
 namespace Abp.Events.Bus.Factories.Internals
 {
     /// <summary>
-    /// Used to unregister a <see cref="IEventHandlerFactory"/> on <see cref="Dispose"/> method.
+    /// 实现了IDisposable接口，用于注销factory
     /// </summary>
     internal class FactoryUnregistrar : IDisposable
     {

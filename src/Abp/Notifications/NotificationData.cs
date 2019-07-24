@@ -12,8 +12,8 @@ namespace Abp.Notifications
     public class NotificationData
     {
         /// <summary>
-        /// Gets notification data type name.
-        /// It returns the full class name by default.
+        /// 通知类型名称.
+        /// 默认返回类全名
         /// </summary>
         public virtual string Type => GetType().FullName;
 
@@ -27,7 +27,7 @@ namespace Abp.Notifications
         }
 
         /// <summary>
-        /// Can be used to add custom properties to this notification.
+        /// 用于向此通知添加自定义属性.
         /// </summary>
         public Dictionary<string, object> Properties
         {
@@ -52,7 +52,7 @@ namespace Abp.Notifications
         private readonly Dictionary<string, object> _properties;
 
         /// <summary>
-        /// Createa a new NotificationData object.
+        /// 构造函数.
         /// </summary>
         public NotificationData()
         {

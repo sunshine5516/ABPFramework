@@ -3,7 +3,7 @@
 namespace Abp.Notifications
 {
     /// <summary>
-    /// This class should be implemented in order to define notifications.
+    /// 抽象基类，用于向<see cref="INotificationDefinitionManager"/>中添加<see cref="NotificationDefinition"/>
     /// </summary>
     public abstract class NotificationProvider : ITransientDependency
     {

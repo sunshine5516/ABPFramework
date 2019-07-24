@@ -31,7 +31,7 @@ namespace Abp.Configuration.Startup
         public ILocalizationConfiguration Localization { get; private set; }
 
         /// <summary>
-        /// Used to configure authorization.
+        /// 配置权限
         /// </summary>
         public IAuthorizationConfiguration Authorization { get; private set; }
 
@@ -41,7 +41,7 @@ namespace Abp.Configuration.Startup
         public IValidationConfiguration Validation { get; private set; }
 
         /// <summary>
-        /// Used to configure settings.
+        /// 设置配置项
         /// </summary>
         public ISettingsConfiguration Settings { get; private set; }
 
@@ -68,22 +68,22 @@ namespace Abp.Configuration.Startup
         public IFeatureConfiguration Features { get; private set; }
 
         /// <summary>
-        /// Used to configure background job system.
+        /// 后台工作配置
         /// </summary>
         public IBackgroundJobConfiguration BackgroundJobs { get; private set; }
 
         /// <summary>
-        /// Used to configure notification system.
+        /// 系统通知配置.
         /// </summary>
         public INotificationConfiguration Notifications { get; private set; }
 
         /// <summary>
-        /// Used to configure navigation.
+        /// 导航配置项.
         /// </summary>
         public INavigationConfiguration Navigation { get; private set; }
 
         /// <summary>
-        /// Used to configure <see cref="IEventBus"/>.
+        /// 事件总成配置
         /// </summary>
         public IEventBusConfiguration EventBus { get; private set; }
 

@@ -7,7 +7,7 @@ using Abp.Utils.Etc;
 namespace Abp.Events.Bus
 {
     /// <summary>
-    /// An event bus that implements Null object pattern.
+    /// 默认<see cref="IEventBus"/>实现
     /// </summary>
     public sealed class NullEventBus : IEventBus
     {

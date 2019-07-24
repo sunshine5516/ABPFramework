@@ -1,7 +1,7 @@
 ﻿namespace Abp.Notifications
 {
     /// <summary>
-    /// Used as a context while defining notifications.
+    /// 在定义通知时用作上下文.
     /// </summary>
     public interface INotificationDefinitionContext
     {

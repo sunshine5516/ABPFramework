@@ -4,7 +4,7 @@ using Abp.Application.Services.Dto;
 namespace Abp.Notifications
 {
     /// <summary>
-    /// Represents a notification sent to a user.
+    /// 用于封装User和Notification关系的Entity.
     /// </summary>
     [Serializable]
     public class UserNotification : EntityDto<Guid>, IUserIdentifier
@@ -20,7 +20,7 @@ namespace Abp.Notifications
         public long UserId { get; set; }
 
         /// <summary>
-        /// Current state of the user notification.
+        /// 当前通知状态.
         /// </summary>
         public UserNotificationState State { get; set; }
 

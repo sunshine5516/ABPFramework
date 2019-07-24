@@ -7,14 +7,14 @@ using Abp.Threading;
 namespace Abp.Configuration
 {
     /// <summary>
-    /// Implements default behavior for ISettingStore.
+    /// ISettingStore.默认实现
     /// Only <see cref="GetSettingOrNullAsync"/> method is implemented and it gets setting's value
     /// from application's configuration file if exists, or returns null if not.
     /// </summary>
     public class DefaultConfigSettingStore : ISettingStore
     {
         /// <summary>
-        /// Gets singleton instance.
+        /// 实例.
         /// </summary>
         public static DefaultConfigSettingStore Instance { get; } = new DefaultConfigSettingStore();
         private DefaultConfigSettingStore()

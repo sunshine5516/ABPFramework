@@ -4,16 +4,14 @@ using Abp.Events.Bus;
 namespace Abp.Configuration.Startup
 {
     /// <summary>
-    /// Used to configure <see cref="IEventBus"/>.
+    /// <see cref="IEventBus"/>.配置
     /// </summary>
     public interface IEventBusConfiguration
     {
         /// <summary>
-        /// True, to use <see cref="EventBus.Default"/>.
-        /// False, to create per <see cref="IIocManager"/>.
-        /// This is generally set to true. But, for unit tests,
-        /// it can be set to false.
-        /// Default: true.
+        /// True, 使用<see cref="EventBus.Default"/>.
+        /// False, 使用 <see cref="IIocManager"/>.
+        /// 默认为true
         /// </summary>
         bool UseDefaultEventBus { get; set; }
     }

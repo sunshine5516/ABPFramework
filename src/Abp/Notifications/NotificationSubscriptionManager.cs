@@ -17,7 +17,7 @@ namespace Abp.Notifications
         private readonly IGuidGenerator _guidGenerator;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NotificationSubscriptionManager"/> class.
+        /// ¹¹Ôìº¯Êý
         /// </summary>
         public NotificationSubscriptionManager(
             INotificationStore store, 
@@ -71,7 +71,8 @@ namespace Abp.Notifications
         }
         
         // TODO: Can work only for single database approach!
-        public async Task<List<NotificationSubscription>> GetSubscriptionsAsync(string notificationName, EntityIdentifier entityIdentifier = null)
+        public async Task<List<NotificationSubscription>> GetSubscriptionsAsync
+            (string notificationName, EntityIdentifier entityIdentifier = null)
         {
             var notificationSubscriptionInfos = await _store.GetSubscriptionsAsync(
                 notificationName,
@@ -84,7 +85,8 @@ namespace Abp.Notifications
                 .ToList();
         }
 
-        public async Task<List<NotificationSubscription>> GetSubscriptionsAsync(int? tenantId, string notificationName, EntityIdentifier entityIdentifier = null)
+        public async Task<List<NotificationSubscription>> GetSubscriptionsAsync
+            (int? tenantId, string notificationName, EntityIdentifier entityIdentifier = null)
         {
             var notificationSubscriptionInfos = await _store.GetSubscriptionsAsync(
                 new[] { tenantId },

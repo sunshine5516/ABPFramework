@@ -1,9 +1,8 @@
 namespace Abp.Events.Bus
 {
     /// <summary>
-    /// This interface must be implemented by event data classes that
-    /// has a single generic argument and this argument will be used by inheritance. 
-    /// 
+    /// 此接口必须由具有单个泛型参数的事件数据类实现，并且此参数将由继承使用。 
+    /// 如果你的evendata继承了这个接口。就可以按照继承层次往上逐个触发事件
     /// For example;
     /// Assume that Student inherits From Person. When trigger an EntityCreatedEventData{Student},
     /// EntityCreatedEventData{Person} is also triggered if EntityCreatedEventData implements

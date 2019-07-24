@@ -5,7 +5,7 @@ using Hangfire;
 namespace Abp.Hangfire.Configuration
 {
     /// <summary>
-    /// Used to configure Hangfire.
+    /// hangfire配置接口
     /// </summary>
     public interface IAbpHangfireConfiguration
     {

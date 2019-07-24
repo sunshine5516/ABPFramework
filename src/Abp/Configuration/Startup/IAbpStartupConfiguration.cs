@@ -32,7 +32,7 @@ namespace Abp.Configuration.Startup
         INavigationConfiguration Navigation { get; }
 
         /// <summary>
-        /// Used to configure <see cref="IEventBus"/>.
+        /// 事件总成配置
         /// </summary>
         IEventBusConfiguration EventBus { get; }
 
@@ -89,12 +89,12 @@ namespace Abp.Configuration.Startup
         IFeatureConfiguration Features { get; }
 
         /// <summary>
-        /// Used to configure background job system.
+        /// 后台工作配置
         /// </summary>
         IBackgroundJobConfiguration BackgroundJobs { get; }
 
         /// <summary>
-        /// Used to configure notification system.
+        /// 系统通知配置.
         /// </summary>
         INotificationConfiguration Notifications { get; }
 

@@ -3,7 +3,7 @@ using System;
 namespace Abp.Events.Bus.Entities
 {
     /// <summary>
-    /// This type of event is used to notify just before creation of an Entity.
+    /// 此类事件用于在创建实体之前通知。
     /// </summary>
     /// <typeparam name="TEntity">Entity type</typeparam>
     [Serializable]

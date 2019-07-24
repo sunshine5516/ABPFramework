@@ -4,7 +4,7 @@ using Abp.MultiTenancy;
 namespace Abp.Authorization.Users
 {
     /// <summary>
-    /// Defines an external authorization source.
+    /// 定义外部授权源。
     /// </summary>
     /// <typeparam name="TTenant">Tenant type</typeparam>
     /// <typeparam name="TUser">User type</typeparam>
@@ -13,36 +13,32 @@ namespace Abp.Authorization.Users
         where TUser : AbpUserBase
     {
         /// <summary>
-        /// Unique name of the authentication source.
-        /// This source name is set to <see cref="AbpUserBase.AuthenticationSource"/>
-        /// if the user authenticated by this authentication source
+        /// 资源唯一名称
         /// </summary>
         string Name { get; }
 
         /// <summary>
-        /// Used to try authenticate a user by this source.
+        /// 用于尝试通过此源对用户进行身份验证。
         /// </summary>
-        /// <param name="userNameOrEmailAddress">User name or email address</param>
-        /// <param name="plainPassword">Plain password of the user</param>
-        /// <param name="tenant">Tenant of the user or null (if user is a host user)</param>
-        /// <returns>True, indicates that this used has authenticated by this source</returns>
+        /// <param name="userNameOrEmailAddress">用户名或邮件</param>
+        /// <param name="plainPassword">密码</param>
+        /// <param name="tenant">用户的租户 (if user is a host user)</param>
+        /// <returns>True, 表示此使用已通过此源验证</returns>
         Task<bool> TryAuthenticateAsync(string userNameOrEmailAddress, string plainPassword, TTenant tenant);
 
         /// <summary>
-        /// This method is a user authenticated by this source which does not exists yet.
-        /// So, source should create the User and fill properties.
+        /// 此方法是由此源进行身份验证的用户，该用户尚不存在。因此，source应创建User和填充属性。
         /// </summary>
-        /// <param name="userNameOrEmailAddress">User name or email address</param>
-        /// <param name="tenant">Tenant of the user or null (if user is a host user)</param>
-        /// <returns>Newly created user</returns>
+        /// <param name="userNameOrEmailAddress">用户名或邮件</param>
+        /// <param name="tenant">用户的租户(if user is a host user)</param>
+        /// <returns>新建的用户</returns>
         Task<TUser> CreateUserAsync(string userNameOrEmailAddress, TTenant tenant);
 
         /// <summary>
-        /// This method is called after an existing user is authenticated by this source.
-        /// It can be used to update some properties of the user by the source.
+        /// 更新用户；在此源对现有用户进行身份验证后调用此方法。它可用于更新源的某些用户属性。
         /// </summary>
-        /// <param name="user">The user that can be updated</param>
-        /// <param name="tenant">Tenant of the user or null (if user is a host user)</param>
+        /// <param name="user">用户</param>
+        /// <param name="tenant">用户的租户 (if user is a host user)</param>
         Task UpdateUserAsync(TUser user, TTenant tenant);
     }
 }

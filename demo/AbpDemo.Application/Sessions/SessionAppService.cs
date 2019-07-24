@@ -14,7 +14,8 @@ namespace AbpDemo.Sessions
 
             if (AbpSession.UserId.HasValue)
             {
-                output.User = (await GetCurrentUserAsync()).MapTo<UserLoginInfoDto>();
+                var teme = await GetCurrentUserAsync();
+                output.User = (teme).MapTo<UserLoginInfoDto>();
             }
 
             if (AbpSession.TenantId.HasValue)

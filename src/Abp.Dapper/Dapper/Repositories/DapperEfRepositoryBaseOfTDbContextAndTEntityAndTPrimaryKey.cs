@@ -12,7 +12,8 @@ namespace Abp.Dapper.Repositories
     {
         private readonly IActiveTransactionProvider _activeTransactionProvider;
 
-        public DapperEfRepositoryBase(IActiveTransactionProvider activeTransactionProvider) : base(activeTransactionProvider)
+        public DapperEfRepositoryBase(IActiveTransactionProvider activeTransactionProvider) 
+            : base(activeTransactionProvider)
         {
             _activeTransactionProvider = activeTransactionProvider;
         }

@@ -24,7 +24,7 @@ namespace Abp.Runtime.Caching
         public ICache InternalCache { get; private set; }
 
         /// <summary>
-        /// Creates a new <see cref="TypedCacheWrapper{TKey,TValue}"/> object.
+        /// ¹¹Ôìº¯Êý
         /// </summary>
         /// <param name="internalCache">The actual internal cache</param>
         public TypedCacheWrapper(ICache internalCache)

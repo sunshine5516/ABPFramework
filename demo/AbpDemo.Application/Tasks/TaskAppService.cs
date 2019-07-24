@@ -1,5 +1,7 @@
 ﻿using Abp.Authorization;
 using Abp.AutoMapper;
+using Abp.BackgroundJobs;
+using Abp.Dapper.Repositories;
 using Abp.Domain.Repositories;
 using Abp.Threading;
 using Abp.Timing;
@@ -18,7 +20,7 @@ namespace AbpDemo.Application.Tasks
         //These members set in constructor using constructor injection.
 
         private readonly IRepository<TaskModel> _taskRepository;
-
+        
         /// <summary>
         ///In constructor, we can get needed classes/interfaces.
         ///They are sent here by dependency injection system automatically.
@@ -26,8 +28,9 @@ namespace AbpDemo.Application.Tasks
         public TaskAppService(IRepository<TaskModel> taskRepository)
         {
             _taskRepository = taskRepository;
+            
         }
-
+        
         public GetTasksOutput GetTasks(GetTasksInput input)
         {
             var query = _taskRepository.GetAll();

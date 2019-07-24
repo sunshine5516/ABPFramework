@@ -3,25 +3,25 @@ using System.Threading.Tasks;
 namespace Abp.Authorization
 {
     /// <summary>
-    /// Most simple implementation of <see cref="IPermissionDependency"/>.
-    /// It checks one or more permissions if they are granted.
+    /// <see cref="IPermissionDependency"/>最简单的实现.
+    /// 检查是否有一个或多个权限.
     /// </summary>
     public class SimplePermissionDependency : IPermissionDependency
     {
         /// <summary>
-        /// A list of permissions to be checked if they are granted.
+        /// 待检测的权限集合.
         /// </summary>
         public string[] Permissions { get; set; }
 
         /// <summary>
-        /// If this property is set to true, all of the <see cref="Permissions"/> must be granted.
+        /// 如果为true, all of the <see cref="Permissions"/> must be granted.
         /// If it's false, at least one of the <see cref="Permissions"/> must be granted.
         /// Default: false.
         /// </summary>
         public bool RequiresAll { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SimplePermissionDependency"/> class.
+        /// 构造函数
         /// </summary>
         /// <param name="permissions">The permissions.</param>
         public SimplePermissionDependency(params string[] permissions)
@@ -30,7 +30,7 @@ namespace Abp.Authorization
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SimplePermissionDependency"/> class.
+        /// 构造函数
         /// </summary>
         /// <param name="requiresAll">
         /// If this is set to true, all of the <see cref="Permissions"/> must be granted.

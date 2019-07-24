@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 namespace Abp.Notifications
 {
     /// <summary>
-    /// Used to manage user notifications.
+    /// user notifications管理，用于获取，删除UserNotification，以及更改UserNotification的状态。
     /// </summary>
     public interface IUserNotificationManager
     {
         /// <summary>
-        /// Gets notifications for a user.
+        /// 获取用户的通知。
         /// </summary>
         /// <param name="user">User.</param>
         /// <param name="state">State</param>
@@ -19,21 +19,21 @@ namespace Abp.Notifications
         Task<List<UserNotification>> GetUserNotificationsAsync(UserIdentifier user, UserNotificationState? state = null, int skipCount = 0, int maxResultCount = int.MaxValue);
 
         /// <summary>
-        /// Gets user notification count.
+        /// 获取用户的通知数量。
         /// </summary>
         /// <param name="user">User.</param>
         /// <param name="state">State.</param>
         Task<int> GetUserNotificationCountAsync(UserIdentifier user, UserNotificationState? state = null);
 
         /// <summary>
-        /// Gets a user notification by given id.
+        /// 根据给定的ID获取用户通知
         /// </summary>
         /// <param name="tenantId">Tenant Id</param>
         /// <param name="userNotificationId">The user notification id.</param>
         Task<UserNotification> GetUserNotificationAsync(int? tenantId, Guid userNotificationId);
 
         /// <summary>
-        /// Updates a user notification state.
+        /// 更新用户通知状态
         /// </summary>
         /// <param name="tenantId">Tenant Id.</param>
         /// <param name="userNotificationId">The user notification id.</param>
@@ -41,21 +41,21 @@ namespace Abp.Notifications
         Task UpdateUserNotificationStateAsync(int? tenantId, Guid userNotificationId, UserNotificationState state);
 
         /// <summary>
-        /// Updates all notification states for a user.
+        /// 更新用户的所有通知状态
         /// </summary>
         /// <param name="user">User.</param>
         /// <param name="state">New state.</param>
         Task UpdateAllUserNotificationStatesAsync(UserIdentifier user, UserNotificationState state);
 
         /// <summary>
-        /// Deletes a user notification.
+        /// 删除用户通知
         /// </summary>
         /// <param name="tenantId">Tenant Id.</param>
         /// <param name="userNotificationId">The user notification id.</param>
         Task DeleteUserNotificationAsync(int? tenantId, Guid userNotificationId);
 
         /// <summary>
-        /// Deletes all notifications of a user.
+        /// 删除用户的所有通知.
         /// </summary>
         /// <param name="user">User.</param>
         Task DeleteAllUserNotificationsAsync(UserIdentifier user);

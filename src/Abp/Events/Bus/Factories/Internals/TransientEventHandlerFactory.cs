@@ -4,17 +4,15 @@ using Abp.Events.Bus.Handlers;
 namespace Abp.Events.Bus.Factories.Internals
 {
     /// <summary>
-    /// This <see cref="IEventHandlerFactory"/> implementation is used to handle events
-    /// by a single instance object. 
+    /// 该工厂每次都会创建一个新的EventHandler的实例。
     /// </summary>
     /// <remarks>
-    /// This class always gets the same single instance of handler.
     /// </remarks>
     internal class TransientEventHandlerFactory<THandler> : IEventHandlerFactory 
         where THandler : IEventHandler, new()
     {
         /// <summary>
-        /// Creates a new instance of the handler object.
+        /// 返回一个处理器对象实例.
         /// </summary>
         /// <returns>The handler object</returns>
         public IEventHandler GetHandler()

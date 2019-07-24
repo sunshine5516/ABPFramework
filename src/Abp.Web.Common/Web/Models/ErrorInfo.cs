@@ -3,7 +3,7 @@
 namespace Abp.Web.Models
 {
     /// <summary>
-    /// Used to store information about an error.
+    /// 存储错误信息
     /// </summary>
     [Serializable]
     public class ErrorInfo

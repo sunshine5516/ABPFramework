@@ -1,12 +1,12 @@
 ﻿namespace Abp.Application.Navigation
 {
     /// <summary>
-    /// Provides infrastructure to set navigation.
+    /// 提供设置导航的基础架构。
     /// </summary>
     public interface INavigationProviderContext
     {
         /// <summary>
-        /// Gets a reference to the menu manager.
+        /// <see cref="INavigationManager"/>实例
         /// </summary>
         INavigationManager Manager { get; }
     }

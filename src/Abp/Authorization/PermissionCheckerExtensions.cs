@@ -47,12 +47,12 @@ namespace Abp.Authorization
         }
 
         /// <summary>
-        /// Checks if given user is granted for given permission.
+        /// 检测给定的用户是否有给定的权限
         /// </summary>
         /// <param name="permissionChecker">Permission checker</param>
-        /// <param name="user">User</param>
+        /// <param name="user">给定的用户</param>
         /// <param name="requiresAll">True, to require all given permissions are granted. False, to require one or more.</param>
-        /// <param name="permissionNames">Name of the permissions</param>
+        /// <param name="permissionNames">权限名称</param>
         public static async Task<bool> IsGrantedAsync(this IPermissionChecker permissionChecker, UserIdentifier user, bool requiresAll, params string[] permissionNames)
         {
             if (permissionNames.IsNullOrEmpty())
@@ -98,12 +98,13 @@ namespace Abp.Authorization
         }
 
         /// <summary>
-        /// Checks if current user is granted for given permission.
+        /// 检查当前用户是否被授予给定权限。
         /// </summary>
         /// <param name="permissionChecker">Permission checker</param>
         /// <param name="requiresAll">True, to require all given permissions are granted. False, to require one or more.</param>
         /// <param name="permissionNames">Name of the permissions</param>
-        public static async Task<bool> IsGrantedAsync(this IPermissionChecker permissionChecker, bool requiresAll, params string[] permissionNames)
+        public static async Task<bool> IsGrantedAsync(this IPermissionChecker permissionChecker,
+            bool requiresAll, params string[] permissionNames)
         {
             if (permissionNames.IsNullOrEmpty())
             {
@@ -137,12 +138,10 @@ namespace Abp.Authorization
         }
 
         /// <summary>
-        /// Authorizes current user for given permission or permissions,
-        /// throws <see cref="AbpAuthorizationException"/> if not authorized.
-        /// User it authorized if any of the <see cref="permissionNames"/> are granted.
+        /// 授权当前用户获得给定的权限,如果未授权，抛出<see cref="AbpAuthorizationException"/>
         /// </summary>
         /// <param name="permissionChecker">Permission checker</param>
-        /// <param name="permissionNames">Name of the permissions to authorize</param>
+        /// <param name="permissionNames">权限名称</param>
         /// <exception cref="AbpAuthorizationException">Throws authorization exception if</exception>
         public static void Authorize(this IPermissionChecker permissionChecker, params string[] permissionNames)
         {
@@ -150,8 +149,7 @@ namespace Abp.Authorization
         }
 
         /// <summary>
-        /// Authorizes current user for given permission or permissions,
-        /// throws <see cref="AbpAuthorizationException"/> if not authorized.
+        /// 授权当前用户获得给定的权限,如果未授权，抛出<see cref="AbpAuthorizationException"/>
         /// User it authorized if any of the <see cref="permissionNames"/> are granted.
         /// </summary>
         /// <param name="permissionChecker">Permission checker</param>

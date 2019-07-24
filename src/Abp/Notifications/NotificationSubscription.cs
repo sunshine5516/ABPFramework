@@ -5,7 +5,7 @@ using Abp.Timing;
 namespace Abp.Notifications
 {
     /// <summary>
-    /// Represents a user subscription to a notification.
+    /// 用于封装封装notification 和subscriptor（User） 的关系的DTO,不是Entity。
     /// </summary>
     public class NotificationSubscription : IHasCreationTime
     {

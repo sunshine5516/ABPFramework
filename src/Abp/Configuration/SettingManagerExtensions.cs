@@ -185,8 +185,8 @@ namespace Abp.Configuration
         }
 
         /// <summary>
-        /// Gets current value of a setting for a user level.
-        /// It gets the setting value, overwritten by given tenant and user.
+        /// 获取用户级别的设置的当前值.
+        /// 它获取设置值，由给定的租户和用户覆盖。
         /// </summary>
         /// <typeparam name="T">Type of the setting to get</typeparam>
         /// <param name="settingManager">Setting manager</param>

@@ -4,7 +4,7 @@ using Abp.Runtime.Caching;
 namespace Abp.Configuration
 {
     /// <summary>
-    /// Extension methods for <see cref="ICacheManager"/> to get setting caches.
+    /// <see cref="ICacheManager"/>的扩展.
     /// </summary>
     public static class CacheManagerSettingExtensions
     {

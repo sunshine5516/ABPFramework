@@ -57,7 +57,7 @@ namespace Abp.Extensions
         }
 
         /// <summary>
-        /// Adds a char to beginning of given string if it does not starts with the char.
+        /// 如果不以指定字符串开头，则将char添加到给定字符串的开头。
         /// </summary>
         public static string EnsureStartsWith(this string str, char c)
         {
@@ -65,7 +65,7 @@ namespace Abp.Extensions
         }
 
         /// <summary>
-        /// Adds a char to beginning of given string if it does not starts with the char.
+        /// 如果不以指定字符串开头，则将char添加到给定字符串的开头。
         /// </summary>
         public static string EnsureStartsWith(this string str, char c, StringComparison comparisonType)
         {

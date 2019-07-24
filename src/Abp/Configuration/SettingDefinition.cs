@@ -10,7 +10,7 @@ namespace Abp.Configuration
     public class SettingDefinition
     {
         /// <summary>
-        /// 唯一的名字
+        /// 唯一名称
         /// </summary>
         public string Name { get; private set; }
 

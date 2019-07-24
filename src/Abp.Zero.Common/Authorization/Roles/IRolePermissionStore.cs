@@ -4,41 +4,41 @@ using System.Threading.Tasks;
 namespace Abp.Authorization.Roles
 {
     /// <summary>
-    /// Used to perform permission database operations for a role.
+    /// 用于为角色执行权限数据库操作。
     /// </summary>
     public interface IRolePermissionStore<in TRole>
         where TRole : AbpRoleBase
     {
         /// <summary>
-        /// Adds a permission grant setting to a role.
+        /// 给角色添加权限
         /// </summary>
-        /// <param name="role">Role</param>
+        /// <param name="role">角色</param>
         /// <param name="permissionGrant">Permission grant setting info</param>
         Task AddPermissionAsync(TRole role, PermissionGrantInfo permissionGrant);
 
         /// <summary>
-        /// Removes a permission grant setting from a role.
+        /// 删除角色权限
         /// </summary>
-        /// <param name="role">Role</param>
+        /// <param name="role">角色</param>
         /// <param name="permissionGrant">Permission grant setting info</param>
         Task RemovePermissionAsync(TRole role, PermissionGrantInfo permissionGrant);
 
         /// <summary>
-        /// Gets permission grant setting informations for a role.
+        ///获取角色权限
         /// </summary>
-        /// <param name="role">Role</param>
-        /// <returns>List of permission setting informations</returns>
+        /// <param name="role">角色</param>
+        /// <returns>权限集合</returns>
         Task<IList<PermissionGrantInfo>> GetPermissionsAsync(TRole role);
 
         /// <summary>
-        /// Gets permission grant setting informations for a role.
+        /// 根据角色ID获取权限集合.
         /// </summary>
-        /// <param name="roleId">Role id</param>
-        /// <returns>List of permission setting informations</returns>
+        /// <param name="roleId">角色ID</param>
+        /// <returns>权限集合</returns>
         Task<IList<PermissionGrantInfo>> GetPermissionsAsync(int roleId);
 
         /// <summary>
-        /// Checks whether a role has a permission grant setting info.
+        /// 检查角色是否有权限.
         /// </summary>
         /// <param name="roleId">Role id</param>
         /// <param name="permissionGrant">Permission grant setting info</param>
@@ -46,7 +46,7 @@ namespace Abp.Authorization.Roles
         Task<bool> HasPermissionAsync(int roleId, PermissionGrantInfo permissionGrant);
 
         /// <summary>
-        /// Deleted all permission settings for a role.
+        /// 删除角色权限.
         /// </summary>
         /// <param name="role">Role</param>
         Task RemoveAllPermissionSettingsAsync(TRole role);

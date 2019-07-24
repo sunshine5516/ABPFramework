@@ -1,17 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Data.Common;
-using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.IO;
 using System.Reflection;
-
 using Abp.Configuration.Startup;
 using Abp.TestBase;
-
 using Castle.MicroKernel.Registration;
-
 using Dapper;
-
 namespace Abp.Dapper.Tests
 {
     public abstract class DapperApplicationTestBase : AbpIntegratedTestBase<AbpDapperTestModule>

@@ -9,29 +9,29 @@ namespace Abp.Configuration
     public class SettingInfo
     {
         /// <summary>
-        /// TenantId for this setting.
-        /// TenantId is null if this setting is not Tenant level.
+        /// 租户ID.
+        /// 如果不是租户级别的则为null
         /// </summary>
         public int? TenantId { get; set; }
 
         /// <summary>
-        /// UserId for this setting.
-        /// UserId is null if this setting is not user level.
+        /// 用户ID.
+        /// 如果不是用户级别的则为null
         /// </summary>
         public long? UserId { get; set; }
 
         /// <summary>
-        /// Unique name of the setting.
+        /// 唯一名称
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Value of the setting.
+        /// 值
         /// </summary>
         public string Value { get; set; }
 
         /// <summary>
-        /// Creates a new <see cref="SettingInfo"/> object.
+        /// 构造函数
         /// </summary>
         public SettingInfo()
         {
@@ -39,7 +39,7 @@ namespace Abp.Configuration
         }
 
         /// <summary>
-        /// Creates a new <see cref="SettingInfo"/> object.
+        /// 构造函数
         /// </summary>
         /// <param name="tenantId">TenantId for this setting. TenantId is null if this setting is not Tenant level.</param>
         /// <param name="userId">UserId for this setting. UserId is null if this setting is not user level.</param>

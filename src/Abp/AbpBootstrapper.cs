@@ -133,10 +133,10 @@ namespace Abp
         /// </summary>
         private void AddInterceptorRegistrars()
         {
-            ValidationInterceptorRegistrar.Initialize(IocManager);
-            AuditingInterceptorRegistrar.Initialize(IocManager);
+            //ValidationInterceptorRegistrar.Initialize(IocManager);
+            //AuditingInterceptorRegistrar.Initialize(IocManager);
             UnitOfWorkRegistrar.Initialize(IocManager);
-            AuthorizationInterceptorRegistrar.Initialize(IocManager);
+            //AuthorizationInterceptorRegistrar.Initialize(IocManager);
         }
 
         /// <summary>

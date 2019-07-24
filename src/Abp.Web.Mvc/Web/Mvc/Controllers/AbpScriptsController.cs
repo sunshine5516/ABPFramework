@@ -19,7 +19,7 @@ using Abp.Web.Timing;
 namespace Abp.Web.Mvc.Controllers
 {
     /// <summary>
-    /// This controller is used to create client side scripts
+    /// 用于创建客户端脚本
     /// to work with ABP.
     /// </summary>
     public class AbpScriptsController : AbpController

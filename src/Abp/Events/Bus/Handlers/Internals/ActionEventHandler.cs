@@ -4,7 +4,7 @@ using Abp.Dependency;
 namespace Abp.Events.Bus.Handlers.Internals
 {
     /// <summary>
-    /// This event handler is an adapter to be able to use an action as <see cref="IEventHandler{TEventData}"/> implementation.
+    /// 起到适配器的作用，将一个Action适配成一个事件处理器EventHandler
     /// </summary>
     /// <typeparam name="TEventData">Event type</typeparam>
     internal class ActionEventHandler<TEventData> :
@@ -12,12 +12,12 @@ namespace Abp.Events.Bus.Handlers.Internals
         ITransientDependency
     {
         /// <summary>
-        /// Action to handle the event.
+        /// 处理事件的动作.
         /// </summary>
         public Action<TEventData> Action { get; private set; }
 
         /// <summary>
-        /// Creates a new instance of <see cref="ActionEventHandler{TEventData}"/>.
+        /// 构造函数
         /// </summary>
         /// <param name="handler">Action to handle the event</param>
         public ActionEventHandler(Action<TEventData> handler)

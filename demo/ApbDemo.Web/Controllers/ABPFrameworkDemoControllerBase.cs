@@ -1,7 +1,6 @@
 ﻿using Abp.IdentityFramework;
 using Abp.UI;
 using Abp.Web.Mvc.Controllers;
-using AbpDemo;
 using Microsoft.AspNet.Identity;
 
 namespace AbpDemo.Web.Controllers

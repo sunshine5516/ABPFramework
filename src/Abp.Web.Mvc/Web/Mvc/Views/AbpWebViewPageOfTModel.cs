@@ -13,7 +13,7 @@ using Abp.Web.Security.AntiForgery;
 namespace Abp.Web.Mvc.Views
 {
     /// <summary>
-    /// Base class for all views in Abp system.
+    /// Abp view基类
     /// </summary>
     /// <typeparam name="TModel">Type of the View Model</typeparam>
     public abstract class AbpWebViewPage<TModel> : WebViewPage<TModel>
@@ -38,7 +38,7 @@ namespace Abp.Web.Mvc.Views
         }
 
         /// <summary>
-        /// Reference to the setting manager.
+        /// SettingManager实例.
         /// </summary>
         public ISettingManager SettingManager { get; set; }
         

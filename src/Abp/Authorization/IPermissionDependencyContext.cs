@@ -4,17 +4,17 @@ using Abp.Dependency;
 namespace Abp.Authorization
 {
     /// <summary>
-    /// Permission dependency context.
+    /// 权限依赖上下文。
     /// </summary>
     public interface IPermissionDependencyContext
     {
         /// <summary>
-        /// The user which requires permission. Can be null if no user.
+        /// 需要权限的用户，可以为空；
         /// </summary>
         UserIdentifier User { get; }
 
         /// <summary>
-        /// Gets the <see cref="IIocResolver"/>.
+        /// <see cref="IIocResolver"/>实例.
         /// </summary>
         /// <value>
         /// The ioc resolver.

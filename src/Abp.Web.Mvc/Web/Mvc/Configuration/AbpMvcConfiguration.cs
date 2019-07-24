@@ -1,6 +1,5 @@
 ﻿using Abp.Domain.Uow;
 using Abp.Web.Models;
-
 namespace Abp.Web.Mvc.Configuration
 {
     public class AbpMvcConfiguration : IAbpMvcConfiguration

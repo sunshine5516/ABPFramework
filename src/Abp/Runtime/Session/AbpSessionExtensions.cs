@@ -6,7 +6,7 @@
     public static class AbpSessionExtensions
     {
         /// <summary>
-        /// Gets current User's Id.
+        /// 获取当前用户Id.
         /// Throws <see cref="AbpException"/> if <see cref="IAbpSession.UserId"/> is null.
         /// </summary>
         /// <param name="session">Session object.</param>
@@ -22,8 +22,7 @@
         }
 
         /// <summary>
-        /// Gets current Tenant's Id.
-        /// Throws <see cref="AbpException"/> if <see cref="IAbpSession.TenantId"/> is null.
+        /// 获取当前 Tenant's Id
         /// </summary>
         /// <param name="session">Session object.</param>
         /// <returns>Current Tenant's Id.</returns>

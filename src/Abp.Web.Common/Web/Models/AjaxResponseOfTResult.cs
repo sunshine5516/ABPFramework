@@ -3,7 +3,7 @@
 namespace Abp.Web.Models
 {
     /// <summary>
-    /// This class is used to create standard responses for AJAX requests.
+    /// 此类用于为AJAX请求创建标准响应。
     /// </summary>
     [Serializable]
     public class AjaxResponse<TResult>: AjaxResponseBase

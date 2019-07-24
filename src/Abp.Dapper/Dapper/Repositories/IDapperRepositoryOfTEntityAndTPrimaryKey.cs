@@ -11,23 +11,24 @@ using JetBrains.Annotations;
 namespace Abp.Dapper.Repositories
 {
     /// <summary>
-    ///     Dapper repository abstraction interface.
+    /// Dapper存储库抽象接口.
     /// </summary>
-    /// <typeparam name="TEntity">The type of the entity.</typeparam>
-    /// <typeparam name="TPrimaryKey">The type of the primary key.</typeparam>
+    /// <typeparam name="TEntity">实体类型.</typeparam>
+    /// <typeparam name="TPrimaryKey">主键.</typeparam>
     /// <seealso cref="IDapperRepository{TEntity,TPrimaryKey}" />
-    public interface IDapperRepository<TEntity, TPrimaryKey> : IRepository where TEntity : class, IEntity<TPrimaryKey>
+    public interface IDapperRepository<TEntity, TPrimaryKey> : IRepository 
+        where TEntity : class, IEntity<TPrimaryKey>
     {
         /// <summary>
-        ///     Gets the specified identifier.
+        /// 根据ID获取指定实体.
         /// </summary>
-        /// <param name="id">The identifier.</param>
+        /// <param name="id">id.</param>
         /// <returns></returns>
         [NotNull]
         TEntity Single([NotNull] TPrimaryKey id);
 
         /// <summary>
-        ///     Gets the Entity with specified predicate
+        /// 根据条件获取指定实体
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
@@ -35,14 +36,14 @@ namespace Abp.Dapper.Repositories
         TEntity Single(Expression<Func<TEntity, bool>> predicate);
 
         /// <summary>
-        ///     Gets the Entity with specified predicate
+        /// 根据条件异步获取指定实体
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
         Task<TEntity> SingleAsync(Expression<Func<TEntity, bool>> predicate);
 
         /// <summary>
-        ///     Gets the asynchronous.
+        /// 根据ID异步获取指定实体.
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
@@ -50,23 +51,23 @@ namespace Abp.Dapper.Repositories
         Task<TEntity> SingleAsync([NotNull] TPrimaryKey id);
 
         /// <summary>
-        ///     Gets the specified identifier.
+        /// 根据ID获取指定实体.
         /// </summary>
-        /// <param name="id">The identifier.</param>
+        /// <param name="id">ID.</param>
         /// <returns></returns>
         [NotNull]
         TEntity Get([NotNull] TPrimaryKey id);
 
         /// <summary>
-        ///     Gets the asynchronous.
+        /// 根据ID异步获取指定实体.
         /// </summary>
-        /// <param name="id">The identifier.</param>
+        /// <param name="id">id.</param>
         /// <returns></returns>
         [NotNull]
         Task<TEntity> GetAsync([NotNull] TPrimaryKey id);
 
         /// <summary>
-        ///     Gets the specified identifier.
+        /// 根据ID返回第一个查询的实体或默认值.
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
@@ -74,7 +75,7 @@ namespace Abp.Dapper.Repositories
         TEntity FirstOrDefault([NotNull] TPrimaryKey id);
 
         /// <summary>
-        ///     Gets the specified identifier.
+        /// 根据ID异步返回第一个查询的实体或默认值.
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
@@ -82,7 +83,7 @@ namespace Abp.Dapper.Repositories
         Task<TEntity> FirstOrDefaultAsync([NotNull] TPrimaryKey id);
 
         /// <summary>
-        ///     Gets the Entity with specified predicate
+        /// 根据条件异步返回第一个查询的实体或默认值
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
@@ -90,7 +91,7 @@ namespace Abp.Dapper.Repositories
         Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate);
 
         /// <summary>
-        ///     Gets the Entity with specified predicate
+        /// 根据条件返回第一个查询的实体或默认值
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
@@ -98,21 +99,21 @@ namespace Abp.Dapper.Repositories
         TEntity FirstOrDefault(Expression<Func<TEntity, bool>> predicate);
 
         /// <summary>
-        ///     Gets the list.
+        /// 获取所有值.
         /// </summary>
         /// <returns></returns>
         [NotNull]
         IEnumerable<TEntity> GetAll();
 
         /// <summary>
-        ///     Gets the list asynchronous.
+        /// 异步获取所有值.
         /// </summary>
         /// <returns></returns>
         [NotNull]
         Task<IEnumerable<TEntity>> GetAllAsync();
 
         /// <summary>
-        ///     Gets the list.
+        /// 根据条件获取所有集合.
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         /// <returns></returns>
@@ -120,7 +121,7 @@ namespace Abp.Dapper.Repositories
         IEnumerable<TEntity> GetAll([NotNull] Expression<Func<TEntity, bool>> predicate);
 
         /// <summary>
-        ///     Gets the list asynchronous.
+        /// 根据条件异步获取所有集合.
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         /// <returns></returns>
@@ -128,7 +129,7 @@ namespace Abp.Dapper.Repositories
         Task<IEnumerable<TEntity>> GetAllAsync([NotNull] Expression<Func<TEntity, bool>> predicate);
 
         /// <summary>
-        ///     Gets the list paged asynchronous.
+        /// 异步获取分页的列表.
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         /// <param name="pageNumber">The page number.</param>
@@ -137,10 +138,11 @@ namespace Abp.Dapper.Repositories
         /// <param name="ascending">if set to <c>true</c> [ascending].</param>
         /// <returns></returns>
         [NotNull]
-        Task<IEnumerable<TEntity>> GetAllPagedAsync([NotNull] Expression<Func<TEntity, bool>> predicate, int pageNumber, int itemsPerPage, [NotNull] string sortingProperty, bool ascending = true);
+        Task<IEnumerable<TEntity>> GetAllPagedAsync([NotNull] Expression<Func<TEntity, bool>> predicate,
+            int pageNumber, int itemsPerPage, [NotNull] string sortingProperty, bool ascending = true);
 
         /// <summary>
-        ///     Gets the list paged asynchronous.
+        /// 异步获取分页的列表.
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         /// <param name="pageNumber">The page number.</param>
@@ -149,10 +151,11 @@ namespace Abp.Dapper.Repositories
         /// <param name="ascending">if set to <c>true</c> [ascending].</param>
         /// <returns></returns>
         [NotNull]
-        Task<IEnumerable<TEntity>> GetAllPagedAsync([NotNull] Expression<Func<TEntity, bool>> predicate, int pageNumber, int itemsPerPage, bool ascending = true, [NotNull] params Expression<Func<TEntity, object>>[] sortingExpression);
+        Task<IEnumerable<TEntity>> GetAllPagedAsync([NotNull] Expression<Func<TEntity, bool>> predicate,
+            int pageNumber, int itemsPerPage, bool ascending = true, [NotNull] params Expression<Func<TEntity, object>>[] sortingExpression);
 
         /// <summary>
-        ///     Gets the list paged.
+        /// 获取分页的列表.
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         /// <param name="pageNumber">The page number.</param>
@@ -164,7 +167,7 @@ namespace Abp.Dapper.Repositories
         IEnumerable<TEntity> GetAllPaged([NotNull] Expression<Func<TEntity, bool>> predicate, int pageNumber, int itemsPerPage, [NotNull] string sortingProperty, bool ascending = true);
 
         /// <summary>
-        ///     Gets the list paged.
+        /// 获取分页的列表.
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         /// <param name="pageNumber">The page number.</param>
@@ -176,14 +179,14 @@ namespace Abp.Dapper.Repositories
         IEnumerable<TEntity> GetAllPaged([NotNull] Expression<Func<TEntity, bool>> predicate, int pageNumber, int itemsPerPage, bool ascending = true, [NotNull] params Expression<Func<TEntity, object>>[] sortingExpression);
 
         /// <summary>
-        ///     Counts the specified predicate.
+        /// 返回满足条件的个数
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         /// <returns></returns>
         int Count([NotNull] Expression<Func<TEntity, bool>> predicate);
 
         /// <summary>
-        ///     Counts the asynchronous.
+        /// 异步获取返回满足条件的个数.
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         /// <returns></returns>
@@ -191,7 +194,7 @@ namespace Abp.Dapper.Repositories
         Task<int> CountAsync([NotNull] Expression<Func<TEntity, bool>> predicate);
 
         /// <summary>
-        ///     Queries the specified query.
+        /// 查询指定的查询.
         /// </summary>
         /// <param name="query">The query.</param>
         /// <param name="parameters">The parameters.</param>
@@ -200,7 +203,7 @@ namespace Abp.Dapper.Repositories
         IEnumerable<TEntity> Query([NotNull] string query, [CanBeNull] object parameters = null);
 
         /// <summary>
-        ///     Queries the asynchronous.
+        /// 异步查询指定的查询.
         /// </summary>
         /// <param name="query">The query.</param>
         /// <param name="parameters">The parameters.</param>
@@ -209,7 +212,7 @@ namespace Abp.Dapper.Repositories
         Task<IEnumerable<TEntity>> QueryAsync([NotNull] string query, [CanBeNull] object parameters = null);
 
         /// <summary>
-        ///     Queries the specified query.
+        /// 查询指定的查询
         /// </summary>
         /// <param name="query">The query.</param>
         /// <param name="parameters">The parameters.</param>
@@ -218,7 +221,7 @@ namespace Abp.Dapper.Repositories
         IEnumerable<TAny> Query<TAny>([NotNull] string query, [CanBeNull] object parameters = null) where TAny : class;
 
         /// <summary>
-        ///     Queries the specified query.
+        /// 异步查询指定的查询.
         /// </summary>
         /// <param name="query">The query.</param>
         /// <param name="parameters">The parameters.</param>
@@ -227,7 +230,7 @@ namespace Abp.Dapper.Repositories
         Task<IEnumerable<TAny>> QueryAsync<TAny>([NotNull] string query, [CanBeNull] object parameters = null) where TAny : class;
 
         /// <summary>
-        ///     Executes the given query text
+        /// 执行给定的查询文本
         /// </summary>
         /// <param name="query">The query.</param>
         /// <param name="parameters">The parameters.</param>
@@ -235,14 +238,14 @@ namespace Abp.Dapper.Repositories
         int Execute([NotNull] string query, [CanBeNull] object parameters = null);
 
         /// <summary>
-        ///     Executes as async the given query text
+        /// 异步执行给定的查询文本
         /// </summary>
         /// <param name="query"></param>
         /// <param name="parameters"></param>
         Task<int> ExecuteAsync([NotNull] string query, [CanBeNull] object parameters = null);
 
         /// <summary>
-        ///     Gets the set.
+        ///  获取集合.
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         /// <param name="firstResult">The first result.</param>
@@ -254,7 +257,7 @@ namespace Abp.Dapper.Repositories
         IEnumerable<TEntity> GetSet([NotNull] Expression<Func<TEntity, bool>> predicate, int firstResult, int maxResults, [NotNull] string sortingProperty, bool ascending = true);
 
         /// <summary>
-        ///     Gets the set.
+        /// 获取集合.
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         /// <param name="firstResult">The first result.</param>
@@ -266,7 +269,7 @@ namespace Abp.Dapper.Repositories
         IEnumerable<TEntity> GetSet([NotNull] Expression<Func<TEntity, bool>> predicate, int firstResult, int maxResults, bool ascending = true, [NotNull] params Expression<Func<TEntity, object>>[] sortingExpression);
 
         /// <summary>
-        ///     Gets the set asynchronous.
+        /// 异步获取集合.
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         /// <param name="firstResult">The first result.</param>
@@ -278,7 +281,7 @@ namespace Abp.Dapper.Repositories
         Task<IEnumerable<TEntity>> GetSetAsync([NotNull] Expression<Func<TEntity, bool>> predicate, int firstResult, int maxResults, [NotNull] string sortingProperty, bool ascending = true);
 
         /// <summary>
-        ///     Gets the set asynchronous.
+        /// 异步获取集合.
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         /// <param name="firstResult">The first result.</param>
@@ -290,19 +293,19 @@ namespace Abp.Dapper.Repositories
         Task<IEnumerable<TEntity>> GetSetAsync([NotNull] Expression<Func<TEntity, bool>> predicate, int firstResult, int maxResults, bool ascending = true, [NotNull] params Expression<Func<TEntity, object>>[] sortingExpression);
 
         /// <summary>
-        ///     Inserts the specified entity.
+        ///  添加数据.
         /// </summary>
         /// <param name="entity">The entity.</param>
         void Insert([NotNull] TEntity entity);
 
         /// <summary>
-        ///     Inserts the and get identifier.
+        /// 添加数据并返回ID.
         /// </summary>
         /// <param name="entity">The entity.</param>
         TPrimaryKey InsertAndGetId([NotNull] TEntity entity);
 
         /// <summary>
-        ///     Inserts the asynchronous.
+        /// 异步添加数据.
         /// </summary>
         /// <param name="entity">The entity.</param>
         /// <returns></returns>
@@ -310,7 +313,7 @@ namespace Abp.Dapper.Repositories
         Task InsertAsync([NotNull] TEntity entity);
 
         /// <summary>
-        ///     Inserts the and get identifier asynchronous.
+        /// 异步添加数据并返回ID.
         /// </summary>
         /// <param name="entity">The entity.</param>
         /// <returns></returns>
@@ -318,32 +321,32 @@ namespace Abp.Dapper.Repositories
         Task<TPrimaryKey> InsertAndGetIdAsync([NotNull] TEntity entity);
 
         /// <summary>
-        ///     Updates the specified entity.
+        /// 更新实体.
         /// </summary>
         /// <param name="entity">The entity.</param>
         void Update([NotNull] TEntity entity);
 
         /// <summary>
-        ///     Updates the asynchronous.
+        /// 异步更新实体.
         /// </summary>
         /// <param name="entity">The entity.</param>
         [NotNull]
         Task UpdateAsync([NotNull] TEntity entity);
 
         /// <summary>
-        ///     Deletes the specified entity.
+        /// 删除实体.
         /// </summary>
         /// <param name="entity">The entity.</param>
         void Delete([NotNull] TEntity entity);
 
         /// <summary>
-        ///     Deletes the specified entity.
+        /// 删除实体.
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         void Delete([NotNull] Expression<Func<TEntity, bool>> predicate);
 
         /// <summary>
-        ///     Deletes the specified entity.
+        /// 异步删除实体.
         /// </summary>
         /// <param name="entity">The entity.</param>
         /// <returns></returns>
@@ -351,7 +354,7 @@ namespace Abp.Dapper.Repositories
         Task DeleteAsync([NotNull] TEntity entity);
 
         /// <summary>
-        ///     Deletes the asynchronous.
+        /// 异步删除实体.
         /// </summary>
         /// <param name="predicate">The predicate.</param>
         /// <returns></returns>

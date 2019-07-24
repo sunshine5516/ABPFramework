@@ -21,7 +21,7 @@ namespace Abp.Notifications
         private readonly IUnitOfWorkManager _unitOfWorkManager;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NotificationStore"/> class.
+        /// 构造函数.
         /// </summary>
         public NotificationStore(
             IRepository<NotificationInfo, Guid> notificationRepository,

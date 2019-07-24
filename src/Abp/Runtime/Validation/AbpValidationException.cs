@@ -7,74 +7,52 @@ using Abp.Logging;
 namespace Abp.Runtime.Validation
 {
     /// <summary>
-    /// This exception type is used to throws validation exceptions.
+    /// 验证异常
     /// </summary>
     [Serializable]
     public class AbpValidationException : AbpException, IHasLogSeverity
     {
         /// <summary>
-        /// Detailed list of validation errors for this exception.
+        /// 验证错误的详细列表。
         /// </summary>
         public IList<ValidationResult> ValidationErrors { get; set; }
 
         /// <summary>
-        /// Exception severity.
+        /// 异常等级.
         /// Default: Warn.
         /// </summary>
         public LogSeverity Severity { get; set; }
-
-        /// <summary>
-        /// Constructor.
-        /// </summary>
+        #region 构造函数
         public AbpValidationException()
         {
             ValidationErrors = new List<ValidationResult>();
             Severity = LogSeverity.Warn;
         }
-
-        /// <summary>
-        /// Constructor for serializing.
-        /// </summary>
         public AbpValidationException(SerializationInfo serializationInfo, StreamingContext context)
             : base(serializationInfo, context)
         {
             ValidationErrors = new List<ValidationResult>();
             Severity = LogSeverity.Warn;
         }
-
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        /// <param name="message">Exception message</param>
         public AbpValidationException(string message)
             : base(message)
         {
             ValidationErrors = new List<ValidationResult>();
             Severity = LogSeverity.Warn;
         }
-
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        /// <param name="message">Exception message</param>
-        /// <param name="validationErrors">Validation errors</param>
         public AbpValidationException(string message, IList<ValidationResult> validationErrors)
             : base(message)
         {
             ValidationErrors = validationErrors;
             Severity = LogSeverity.Warn;
         }
-
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        /// <param name="message">Exception message</param>
-        /// <param name="innerException">Inner exception</param>
         public AbpValidationException(string message, Exception innerException)
             : base(message, innerException)
         {
             ValidationErrors = new List<ValidationResult>();
             Severity = LogSeverity.Warn;
         }
+        #endregion
+
     }
 }

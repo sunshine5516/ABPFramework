@@ -11,7 +11,9 @@ using Castle.Windsor;
 namespace Abp.Events.Bus
 {
     /// <summary>
-    /// Installs event bus system and registers all handlers automatically.
+    /// 实现了IWindsorInstaller接口，加载事件总线系统，注册所有的处理器
+    /// 第一，Register IEventBus和EventBus到依赖注入框架中，并且resolve IEventBus以得到EventBus的实例。
+    /// 第二，将所有实现了IEventHandler<in TEventData>的类都会添加到Eventbus的_handlerFactories这个集合中
     /// </summary>
     internal class EventBusInstaller : IWindsorInstaller
     {
@@ -30,7 +32,8 @@ namespace Abp.Events.Bus
             if (_eventBusConfiguration.UseDefaultEventBus)
             {
                 container.Register(
-                    Component.For<IEventBus>().UsingFactoryMethod(() => EventBus.Default).LifestyleSingleton()
+                    Component.For<IEventBus>().UsingFactoryMethod(() 
+                    => EventBus.Default).LifestyleSingleton()
                     );
             }
             else

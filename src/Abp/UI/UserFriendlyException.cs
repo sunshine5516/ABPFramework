@@ -5,7 +5,7 @@ using Abp.Logging;
 namespace Abp.UI
 {
     /// <summary>
-    /// This exception type is directly shown to the user.
+    /// 该异常直接展示给用户.
     /// </summary>
     [Serializable]
     public class UserFriendlyException : AbpException, IHasLogSeverity, IHasErrorCode

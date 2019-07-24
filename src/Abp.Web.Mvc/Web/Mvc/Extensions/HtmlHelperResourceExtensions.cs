@@ -20,7 +20,7 @@ namespace Abp.Web.Mvc.Extensions
         }
 
         /// <summary>
-        /// Includes a script to the page with versioning.
+        /// 添加脚本文件到页面
         /// </summary>
         /// <param name="html">Reference to the HtmlHelper object</param>
         /// <param name="url">URL of the script file</param>

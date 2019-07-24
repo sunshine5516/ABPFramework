@@ -11,7 +11,7 @@ using Castle.Core.Internal;
 namespace Abp.Notifications
 {
     /// <summary>
-    /// Used to distribute notifications to users.
+    /// 向用户分发通知
     /// </summary>
     public class NotificationDistributer : DomainService, INotificationDistributer
     {
@@ -23,7 +23,7 @@ namespace Abp.Notifications
         private readonly IGuidGenerator _guidGenerator;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NotificationDistributionJob"/> class.
+        /// 构造函数
         /// </summary>
         public NotificationDistributer(
             INotificationDefinitionManager notificationDefinitionManager,
@@ -90,7 +90,7 @@ namespace Abp.Notifications
                 if (tenantIds.IsNullOrEmpty() ||
                     (tenantIds.Length == 1 && tenantIds[0] == NotificationInfo.AllTenantIds.To<int>()))
                 {
-                    //Get all subscribed users of all tenants
+                    //获取所有租户中的所有订阅用户
                     subscriptions = await _notificationStore.GetSubscriptionsAsync(
                         notificationInfo.NotificationName,
                         notificationInfo.EntityTypeName,
@@ -99,7 +99,7 @@ namespace Abp.Notifications
                 }
                 else
                 {
-                    //Get all subscribed users of specified tenant(s)
+                    //获取特定租户中的所有订阅用户
                     subscriptions = await _notificationStore.GetSubscriptionsAsync(
                         tenantIds,
                         notificationInfo.NotificationName,
@@ -108,7 +108,7 @@ namespace Abp.Notifications
                         );
                 }
 
-                //Remove invalid subscriptions
+                //删除无效订阅
                 var invalidSubscriptions = new Dictionary<Guid, NotificationSubscriptionInfo>();
 
                 //TODO: Group subscriptions per tenant for potential performance improvement
@@ -116,7 +116,8 @@ namespace Abp.Notifications
                 {
                     using (CurrentUnitOfWork.SetTenantId(subscription.TenantId))
                     {
-                        if (!await _notificationDefinitionManager.IsAvailableAsync(notificationInfo.NotificationName, new UserIdentifier(subscription.TenantId, subscription.UserId)) ||
+                        if (!await _notificationDefinitionManager.IsAvailableAsync(notificationInfo.NotificationName,
+                            new UserIdentifier(subscription.TenantId, subscription.UserId)) ||
                             !SettingManager.GetSettingValueForUser<bool>(NotificationSettingNames.ReceiveNotifications, subscription.TenantId, subscription.UserId))
                         {
                             invalidSubscriptions[subscription.Id] = subscription;

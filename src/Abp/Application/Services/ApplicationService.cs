@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Abp.Application.Features;
 using Abp.Authorization;
 using Abp.Runtime.Session;
-
 namespace Abp.Application.Services
 {
     /// <summary>

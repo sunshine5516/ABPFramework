@@ -13,57 +13,56 @@ namespace Abp.Application.Navigation
     public class MenuItemDefinition : IHasMenuItemDefinitions
     {
         /// <summary>
-        /// Unique name of the menu item in the application. 
-        /// Can be used to find this menu item later.
+        /// 唯一名称
         /// </summary>
         public string Name { get; }
 
         /// <summary>
-        /// Display name of the menu item. Required.
+        /// 显示名称
         /// </summary>
         public ILocalizableString DisplayName { get; set; }
         
         /// <summary>
-        /// The Display order of the menu. Optional.
+        /// 顺序
         /// </summary>
         public int Order { get; set; }
         
         /// <summary>
-        /// Icon of the menu item if exists. Optional.
+        /// 图标
         /// </summary>
         public string Icon { get; set; }
         
         /// <summary>
-        /// The URL to navigate when this menu item is selected. Optional.
+        /// 导航地址
         /// </summary>
         public string Url { get; set; }
 
         /// <summary>
-        /// A permission name. Only users that has this permission can see this menu item.
+        /// 权限名称，只有拥有该权限的用户才能访问
         /// Optional.
         /// </summary>
         [Obsolete("Use PermissionDependency instead.")]
         public string RequiredPermissionName { get; set; }
 
         /// <summary>
-        /// A permission dependency. Only users that can satisfy this permission dependency can see this menu item.
+        /// 权限依赖。 只有能够满足此权限依赖性的用户才能看到此菜单项。
         /// Optional.
         /// </summary>
         public IPermissionDependency PermissionDependency { get; set; }
 
         /// <summary>
-        /// A feature dependency.
+        /// 功能依赖
         /// Optional.
         /// </summary>
         public IFeatureDependency FeatureDependency { get; set; }
 
         /// <summary>
-        /// This can be set to true if only authenticated users should see this menu item.
+        /// 如果只有经过身份验证的用户才能看到此菜单项，则可以将其设置为true。
         /// </summary>
         public bool RequiresAuthentication { get; set; }
 
         /// <summary>
-        /// Returns true if this menu item has no child <see cref="Items"/>.
+        /// 如果无子项，返回ture
         /// </summary>
         public bool IsLeaf => Items.IsNullOrEmpty();
         
@@ -78,17 +77,17 @@ namespace Abp.Application.Navigation
         public object CustomData { get; set; }
 
         /// <summary>
-        /// Can be used to enable/disable a menu item.
+        /// 是否可用
         /// </summary>
         public bool IsEnabled { get; set; }
 
         /// <summary>
-        /// Can be used to show/hide a menu item.
+        /// 是否可见
         /// </summary>
         public bool IsVisible { get; set; }
 
         /// <summary>
-        /// Sub items of this menu item. Optional.
+        /// 此菜单项的子项，可选的。
         /// </summary>
         public virtual IList<MenuItemDefinition> Items { get; }
 
@@ -141,7 +140,7 @@ namespace Abp.Application.Navigation
         }
 
         /// <summary>
-        /// Adds a <see cref="MenuItemDefinition"/> to <see cref="Items"/>.
+        /// 添加 <see cref="MenuItemDefinition"/> to <see cref="Items"/>.
         /// </summary>
         /// <param name="menuItem"><see cref="MenuItemDefinition"/> to be added</param>
         /// <returns>This <see cref="MenuItemDefinition"/> object</returns>

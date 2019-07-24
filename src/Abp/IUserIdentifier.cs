@@ -1,17 +1,17 @@
 ﻿namespace Abp
 {
     /// <summary>
-    /// Interface to get a user identifier.
+    /// 用户标识接口.
     /// </summary>
     public interface IUserIdentifier
     {
         /// <summary>
-        /// Tenant Id. Can be null for host users.
+        /// 租户Id.
         /// </summary>
         int? TenantId { get; }
 
         /// <summary>
-        /// Id of the user.
+        /// 用户ID.
         /// </summary>
         long UserId { get; }
     }

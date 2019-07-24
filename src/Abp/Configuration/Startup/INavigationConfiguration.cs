@@ -4,7 +4,7 @@ using Abp.Collections;
 namespace Abp.Configuration.Startup
 {
     /// <summary>
-    /// Used to configure navigation.
+    /// 导航配置项.
     /// </summary>
     public interface INavigationConfiguration
     {

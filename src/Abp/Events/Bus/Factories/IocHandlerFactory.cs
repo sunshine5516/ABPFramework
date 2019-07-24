@@ -18,7 +18,7 @@ namespace Abp.Events.Bus.Factories
         private readonly IIocResolver _iocResolver;
 
         /// <summary>
-        /// Creates a new instance of <see cref="IocHandlerFactory"/> class.
+        /// ¹¹Ôìº¯Êý
         /// </summary>
         /// <param name="iocResolver"></param>
         /// <param name="handlerType">Type of the handler</param>

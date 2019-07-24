@@ -9,7 +9,7 @@ using Abp.Dependency;
 namespace Abp.Notifications
 {
     /// <summary>
-    /// Implements <see cref="INotificationDefinitionManager"/>.
+    /// <see cref="NotificationDefinition"/>管理，单例对象.
     /// </summary>
     internal class NotificationDefinitionManager : INotificationDefinitionManager, ISingletonDependency
     {

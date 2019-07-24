@@ -24,7 +24,7 @@ namespace Abp.BackgroundJobs
         {
             return _backgroundJobRepository.GetAsync(jobId);
         }
-
+        [UnitOfWork]
         public Task InsertAsync(BackgroundJobInfo jobInfo)
         {
             return _backgroundJobRepository.InsertAsync(jobInfo);

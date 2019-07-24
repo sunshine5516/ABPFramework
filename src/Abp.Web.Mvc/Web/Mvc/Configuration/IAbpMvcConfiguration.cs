@@ -16,24 +16,24 @@ namespace Abp.Web.Mvc.Configuration
         WrapResultAttribute DefaultWrapResultAttribute { get; }
 
         /// <summary>
-        /// Default: true.
+        /// 默认: true.
         /// </summary>
         bool IsValidationEnabledForControllers { get; set; }
 
         /// <summary>
-        /// Default: true.
+        /// 默认: true.
         /// </summary>
         bool IsAutomaticAntiForgeryValidationEnabled { get; set; }
 
         /// <summary>
-        /// Used to enable/disable auditing for MVC controllers.
-        /// Default: true.
+        /// MVC controllers审计是否可用.
+        /// 默认: true.
         /// </summary>
         bool IsAuditingEnabled { get; set; }
 
         /// <summary>
-        /// Used to enable/disable auditing for child MVC actions.
-        /// Default: false.
+        /// MVC actions审计是否可用.
+        /// 默认: false.
         /// </summary>
         bool IsAuditingEnabledForChildActions { get; set; }
     }

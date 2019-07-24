@@ -3,43 +3,43 @@
 namespace Abp.Runtime.Security
 {
     /// <summary>
-    /// Used to get ABP-specific claim type names.
+    /// 用于获取特定于ABP的声明类型名称。
     /// </summary>
     public static class AbpClaimTypes
     {
         /// <summary>
         /// UserId.
-        /// Default: <see cref="ClaimTypes.Name"/>
+        /// 默认: <see cref="ClaimTypes.Name"/>
         /// </summary>
         public static string UserName { get; set; } = ClaimTypes.Name;
 
         /// <summary>
         /// UserId.
-        /// Default: <see cref="ClaimTypes.NameIdentifier"/>
+        /// 默认: <see cref="ClaimTypes.NameIdentifier"/>
         /// </summary>
         public static string UserId { get; set; } = ClaimTypes.NameIdentifier;
 
         /// <summary>
         /// UserId.
-        /// Default: <see cref="ClaimTypes.Role"/>
+        /// 默认: <see cref="ClaimTypes.Role"/>
         /// </summary>
         public static string Role { get; set; } = ClaimTypes.Role;
 
         /// <summary>
         /// TenantId.
-        /// Default: http://www.aspnetboilerplate.com/identity/claims/tenantId
+        /// 默认: http://www.aspnetboilerplate.com/identity/claims/tenantId
         /// </summary>
         public static string TenantId { get; set; } = "http://www.aspnetboilerplate.com/identity/claims/tenantId";
 
         /// <summary>
         /// ImpersonatorUserId.
-        /// Default: http://www.aspnetboilerplate.com/identity/claims/impersonatorUserId
+        /// 默认: http://www.aspnetboilerplate.com/identity/claims/impersonatorUserId
         /// </summary>
         public static string ImpersonatorUserId { get; set; } = "http://www.aspnetboilerplate.com/identity/claims/impersonatorUserId";
 
         /// <summary>
         /// ImpersonatorTenantId
-        /// Default: http://www.aspnetboilerplate.com/identity/claims/impersonatorTenantId
+        /// 默认: http://www.aspnetboilerplate.com/identity/claims/impersonatorTenantId
         /// </summary>
         public static string ImpersonatorTenantId { get; set; } = "http://www.aspnetboilerplate.com/identity/claims/impersonatorTenantId";
     }

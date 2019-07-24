@@ -46,7 +46,7 @@ namespace Abp.Web.Mvc.Resources
         }
 
         /// <summary>
-        /// Gets an embedded resource file.
+        /// 获取嵌入的资源文件。
         /// </summary>
         /// <param name="fullResourcePath">Full path of the resource</param>
         /// <returns>Embedded resource file</returns>

@@ -118,7 +118,7 @@ namespace Abp.Authorization.Users
         }
 
         /// <summary>
-        /// Check whether a user is granted for a permission.
+        /// 检验用户是否有该权限
         /// </summary>
         /// <param name="userId">User id</param>
         /// <param name="permissionName">Permission name</param>
@@ -131,7 +131,7 @@ namespace Abp.Authorization.Users
         }
 
         /// <summary>
-        /// Check whether a user is granted for a permission.
+        /// 检验用户是否有该权限
         /// </summary>
         /// <param name="user">User</param>
         /// <param name="permission">Permission</param>
@@ -141,7 +141,7 @@ namespace Abp.Authorization.Users
         }
 
         /// <summary>
-        /// Check whether a user is granted for a permission.
+        /// 检验用户是否有该权限
         /// </summary>
         /// <param name="userId">User id</param>
         /// <param name="permission">Permission</param>
@@ -304,12 +304,12 @@ namespace Abp.Authorization.Users
         }
 
         /// <summary>
-        /// Gets a user by given id.
-        /// Throws exception if no user found with given id.
+        /// 根据ID获取用户信息.
+        /// 如果没有，抛出异常
         /// </summary>
         /// <param name="userId">User id</param>
         /// <returns>User</returns>
-        /// <exception cref="AbpException">Throws exception if no user found with given id</exception>
+        /// <exception cref="AbpException">如果没有，抛出异常</exception>
         public virtual async Task<TUser> GetUserByIdAsync(long userId)
         {
             var user = await FindByIdAsync(userId);
@@ -596,9 +596,12 @@ namespace Abp.Authorization.Users
 
         public virtual void InitializeLockoutSettings(int? tenantId)
         {
-            UserLockoutEnabledByDefault = IsTrue(AbpZeroSettingNames.UserManagement.UserLockOut.IsEnabled, tenantId);
-            DefaultAccountLockoutTimeSpan = TimeSpan.FromSeconds(GetSettingValue<int>(AbpZeroSettingNames.UserManagement.UserLockOut.DefaultAccountLockoutSeconds, tenantId));
-            MaxFailedAccessAttemptsBeforeLockout = GetSettingValue<int>(AbpZeroSettingNames.UserManagement.UserLockOut.MaxFailedAccessAttemptsBeforeLockout, tenantId);
+            UserLockoutEnabledByDefault = IsTrue
+                (AbpZeroSettingNames.UserManagement.UserLockOut.IsEnabled, tenantId);
+            DefaultAccountLockoutTimeSpan = TimeSpan.FromSeconds(GetSettingValue<int>
+                (AbpZeroSettingNames.UserManagement.UserLockOut.DefaultAccountLockoutSeconds, tenantId));
+            MaxFailedAccessAttemptsBeforeLockout = GetSettingValue<int>
+                (AbpZeroSettingNames.UserManagement.UserLockOut.MaxFailedAccessAttemptsBeforeLockout, tenantId);
         }
 
         public override async Task<IList<string>> GetValidTwoFactorProvidersAsync(long userId)

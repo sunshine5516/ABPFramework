@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using AbpDemo.Tasks.Dto;
+﻿using AbpDemo.Tasks.Dto;
 using AutoMapper;
 
 namespace AbpDemo.Tasks

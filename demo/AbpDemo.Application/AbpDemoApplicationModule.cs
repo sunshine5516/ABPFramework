@@ -3,6 +3,7 @@ using Abp.Authorization;
 using Abp.Authorization.Roles;
 using Abp.Authorization.Users;
 using Abp.AutoMapper;
+using Abp.Dapper;
 using Abp.Domain.Repositories;
 using Abp.Modules;
 using Abp.WebApi.Controllers.Dynamic.Builders;
@@ -15,7 +16,8 @@ using Castle.MicroKernel.Registration;
 
 namespace AbpDemo
 {
-    [DependsOn(typeof(AbpDemoCoreModule), typeof(AbpAutoMapperModule))]
+    [DependsOn(typeof(AbpDemoCoreModule), typeof(AbpAutoMapperModule)
+        , typeof(AbpDapperModule))]
     public class AbpDemoApplicationModule : AbpModule
     {
         public override void PreInitialize()

@@ -6,7 +6,7 @@ namespace Abp.Threading.Timers
 {
     /// <summary>
     /// A roboust timer implementation that ensures no overlapping occurs. It waits exactly specified <see cref="Period"/> between ticks.
-    /// 定时器实现，确保不会发生重叠。 它在ticks之间精确等待<see cref ="Period"/>。
+    /// 自定义定时器，定时器实现，确保不会发生重叠。 它在ticks之间精确等待<see cref ="Period"/>。
     /// </summary>
     //TODO: Extract interface or make all members virtual to make testing easier.
     public class AbpTimer : RunnableBase, ITransientDependency

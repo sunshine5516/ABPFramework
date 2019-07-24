@@ -3,7 +3,7 @@ using System;
 namespace Abp.Web.Models
 {
     /// <summary>
-    /// This class is used to create standard responses for AJAX/remote requests.
+    /// 此类用于为AJAX /远程请求创建标准响应。
     /// </summary>
     [Serializable]
     public class AjaxResponse : AjaxResponse<object>

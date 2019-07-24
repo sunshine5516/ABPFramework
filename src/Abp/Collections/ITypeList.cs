@@ -12,7 +12,7 @@ namespace Abp.Collections
     }
 
     /// <summary>
-    /// Extends <see cref="IList{Type}"/> to add restriction a specific base type.
+    /// 扩展 <see cref="IList{Type}"/> 添加限制特定的基本类型。
     /// </summary>
     /// <typeparam name="TBaseType">Base Type of <see cref="Type"/>s in this list</typeparam>
     public interface ITypeList<in TBaseType> : IList<Type>

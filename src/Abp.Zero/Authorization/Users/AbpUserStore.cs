@@ -46,7 +46,7 @@ namespace Abp.Authorization.Users
         private readonly IUnitOfWorkManager _unitOfWorkManager;
 
         /// <summary>
-        /// Constructor.
+        /// 构造函数.
         /// </summary>
         protected AbpUserStore(
             IRepository<TUser, long> userRepository,
@@ -266,7 +266,8 @@ namespace Abp.Authorization.Users
         public virtual async Task RemoveFromRoleAsync(TUser user, string roleName)
         {
             var role = await GetRoleByNameAsync(roleName);
-            var userRole = await _userRoleRepository.FirstOrDefaultAsync(ur => ur.UserId == user.Id && ur.RoleId == role.Id);
+            var userRole = await _userRoleRepository.FirstOrDefaultAsync
+                (ur => ur.UserId == user.Id && ur.RoleId == role.Id);
             if (userRole == null)
             {
                 return;
@@ -358,7 +359,8 @@ namespace Abp.Authorization.Users
 
         public Task SetLockoutEndDateAsync(TUser user, DateTimeOffset lockoutEnd)
         {
-            user.LockoutEndDateUtc = lockoutEnd == DateTimeOffset.MinValue ? new DateTime?() : lockoutEnd.UtcDateTime;
+            user.LockoutEndDateUtc = lockoutEnd == DateTimeOffset.MinValue 
+                ? new DateTime?() : lockoutEnd.UtcDateTime;
             return Task.FromResult(0);
         }
 

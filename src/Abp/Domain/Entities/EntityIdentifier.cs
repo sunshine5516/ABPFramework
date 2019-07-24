@@ -3,7 +3,7 @@ using System;
 namespace Abp.Domain.Entities
 {
     /// <summary>
-    /// Used to identify an entity.
+    /// 用于标识实体。
     /// Can be used to store an entity <see cref="Type"/> and <see cref="Id"/>.
     /// </summary>
     [Serializable]

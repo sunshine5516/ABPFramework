@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 namespace Abp.RealTime
 {
     /// <summary>
-    /// Used to manage online clients those are connected to the application..
+    /// 用于管理连接到应用程序的在线客户端。.
     /// </summary>
     public interface IOnlineClientManager
     {

@@ -15,27 +15,27 @@ namespace Abp.Authorization.Users
     public class UserLoginAttempt : Entity<long>, IHasCreationTime, IMayHaveTenant
     {
         /// <summary>
-        /// Max length of the <see cref="TenancyName"/> property.
+        /// <see cref="TenancyName"/>最大长度.
         /// </summary>
         public const int MaxTenancyNameLength = AbpTenantBase.MaxTenancyNameLength;
 
         /// <summary>
-        /// Max length of the <see cref="TenancyName"/> property.
+        /// <see cref="TenancyName"/>最大长度.
         /// </summary>
         public const int MaxUserNameOrEmailAddressLength = 255;
 
         /// <summary>
-        /// Maximum length of <see cref="ClientIpAddress"/> property.
+        /// <see cref="ClientIpAddress"/>最大长度.
         /// </summary>
         public const int MaxClientIpAddressLength = 64;
 
         /// <summary>
-        /// Maximum length of <see cref="ClientName"/> property.
+        /// <see cref="ClientName"/>最大长度.
         /// </summary>
         public const int MaxClientNameLength = 128;
 
         /// <summary>
-        /// Maximum length of <see cref="BrowserInfo"/> property.
+        /// <see cref="BrowserInfo"/>最大长度.
         /// </summary>
         public const int MaxBrowserInfoLength = 256;
 
@@ -45,49 +45,49 @@ namespace Abp.Authorization.Users
         public virtual int? TenantId { get; set; }
 
         /// <summary>
-        /// Tenancy name.
+        /// 租户名称.
         /// </summary>
         [MaxLength(MaxTenancyNameLength)]
         public virtual string TenancyName { get; set; }
 
         /// <summary>
-        /// User's Id, if <see cref="UserNameOrEmailAddress"/> was a valid username or email address.
+        /// 用户ID
         /// </summary>
         public virtual long? UserId { get; set; }
 
         /// <summary>
-        /// User name or email address
+        /// 用户名或电子邮件
         /// </summary>
         [MaxLength(MaxUserNameOrEmailAddressLength)]
         public virtual string UserNameOrEmailAddress { get; set; }
 
         /// <summary>
-        /// IP address of the client.
+        /// IP address.
         /// </summary>
         [MaxLength(MaxClientIpAddressLength)]
         public virtual string ClientIpAddress { get; set; }
 
         /// <summary>
-        /// Name (generally computer name) of the client.
+        /// 客户端名称.
         /// </summary>
         [MaxLength(MaxClientNameLength)]
         public virtual string ClientName { get; set; }
 
         /// <summary>
-        /// Browser information if this method is called in a web request.
+        /// 浏览器信息.
         /// </summary>
         [MaxLength(MaxBrowserInfoLength)]
         public virtual string BrowserInfo { get; set; }
 
         /// <summary>
-        /// Login attempt result.
+        /// 登录结果
         /// </summary>
         public virtual AbpLoginResultType Result { get; set; }
 
         public virtual DateTime CreationTime { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserLoginAttempt"/> class.
+        /// 构造函数
         /// </summary>
         public UserLoginAttempt()
         {

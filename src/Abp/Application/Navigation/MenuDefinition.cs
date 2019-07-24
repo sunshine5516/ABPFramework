@@ -32,10 +32,10 @@ namespace Abp.Application.Navigation
         public IList<MenuItemDefinition> Items { get; set; }
 
         /// <summary>
-        /// Creates a new <see cref="MenuDefinition"/> object.
+        /// 构造函数
         /// </summary>
-        /// <param name="name">Unique name of the menu</param>
-        /// <param name="displayName">Display name of the menu</param>
+        /// <param name="name">唯一名称</param>
+        /// <param name="displayName">显示名称</param>
         /// <param name="customData">Can be used to store a custom object related to this menu.</param>
         public MenuDefinition(string name, ILocalizableString displayName, object customData = null)
         {
@@ -57,7 +57,7 @@ namespace Abp.Application.Navigation
         }
 
         /// <summary>
-        /// Adds a <see cref="MenuItemDefinition"/> to <see cref="Items"/>.
+        /// 添加<see cref="MenuItemDefinition"/>.
         /// </summary>
         /// <param name="menuItem"><see cref="MenuItemDefinition"/> to be added</param>
         /// <returns>This <see cref="MenuDefinition"/> object</returns>

@@ -6,7 +6,7 @@ using Abp.Events.Bus.Handlers;
 namespace Abp.Events.Bus
 {
     /// <summary>
-    /// 定义事件总线接口.
+    /// 定义了一系列注册，注销和触发事件处理函数的接口
     /// </summary>
     public interface IEventBus
     {

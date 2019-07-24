@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 namespace Abp.BackgroundJobs
 {
     /// <summary>
-    /// Null pattern implementation of <see cref="IBackgroundJobStore"/>.
-    /// It's used if <see cref="IBackgroundJobStore"/> is not implemented by actual persistent store
-    /// and job execution is not enabled (<see cref="IBackgroundJobConfiguration.IsJobExecutionEnabled"/>) for the application.
+    /// <see cref="IBackgroundJobStore"/>空实现.
+    /// <see cref="IBackgroundJobStore"/>未实际持久性存储实现的以及
+    /// 未启动<see cref="IBackgroundJobConfiguration.IsJobExecutionEnabled"/>，使用该类
     /// </summary>
     public class NullBackgroundJobStore : IBackgroundJobStore
     {

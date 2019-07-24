@@ -29,7 +29,7 @@ namespace Abp.Application.Navigation
         public IList<UserMenuItem> Items { get; set; }
 
         /// <summary>
-        /// Creates a new <see cref="UserMenu"/> object.
+        /// 构造函数
         /// </summary>
         public UserMenu()
         {
@@ -37,7 +37,7 @@ namespace Abp.Application.Navigation
         }
 
         /// <summary>
-        /// Creates a new <see cref="UserMenu"/> object from given <see cref="MenuDefinition"/>.
+        /// 构造函数
         /// </summary>
         internal UserMenu(MenuDefinition menuDefinition, ILocalizationContext localizationContext)
         {

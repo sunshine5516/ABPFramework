@@ -3,7 +3,7 @@
 namespace Abp.Notifications
 {
     /// <summary>
-    /// Interface to send real time notifications to users.
+    /// 向用户发送实时通知接口
     /// </summary>
     public interface IRealTimeNotifier
     {

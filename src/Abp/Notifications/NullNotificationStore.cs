@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace Abp.Notifications
 {
     /// <summary>
-    /// Null pattern implementation of <see cref="INotificationStore"/>.
+    /// <see cref="INotificationStore"/>的默认实现.
     /// </summary>
     public class NullNotificationStore : INotificationStore
     {

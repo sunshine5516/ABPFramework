@@ -10,7 +10,7 @@ using Abp.TestBase.Runtime.Session;
 namespace Abp.TestBase
 {
     /// <summary>
-    /// This is the base class for all tests integrated to ABP.
+    /// 集成的所有测试的基类.
     /// </summary>
     public abstract class AbpIntegratedTestBase<TStartupModule> : IDisposable 
         where TStartupModule : AbpModule
@@ -23,7 +23,7 @@ namespace Abp.TestBase
         protected AbpBootstrapper AbpBootstrapper { get; }
 
         /// <summary>
-        /// Gets Session object. Can be used to change current user and tenant in tests.
+        /// 获取Session对象。 可用于在测试中更改当前用户和租户。
         /// </summary>
         protected TestAbpSession AbpSession { get; private set; }
 
@@ -128,7 +128,7 @@ namespace Abp.TestBase
         }
 
         /// <summary>
-        /// Registers given type if it's not registered before.
+        /// 如果之前没有注册，则注册类型。
         /// </summary>
         /// <param name="type">Type to check and register</param>
         /// <param name="lifeStyle">Lifestyle</param>

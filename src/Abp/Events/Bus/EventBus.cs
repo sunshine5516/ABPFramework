@@ -31,15 +31,14 @@ namespace Abp.Events.Bus
         public ILogger Logger { get; set; }
 
         /// <summary>
-        /// All registered handler factories.
-        /// Key: Type of the event
-        /// Value: List of handler factories
+        /// 所有注册处理工厂集合。
+        /// Key: event类型
+        /// Value: 处理工厂集合
         /// </summary>
         private readonly ConcurrentDictionary<Type, List<IEventHandlerFactory>> _handlerFactories;
 
         /// <summary>
-        /// Creates a new <see cref="EventBus"/> instance.
-        /// Instead of creating a new instace, you can use <see cref="Default"/> to use Global <see cref="EventBus"/>.
+        /// 构造函数.        
         /// </summary>
         public EventBus()
         {
@@ -74,7 +73,8 @@ namespace Abp.Events.Bus
         }
 
         /// <inheritdoc/>
-        public IDisposable Register<TEventData>(IEventHandlerFactory handlerFactory) where TEventData : IEventData
+        public IDisposable Register<TEventData>(IEventHandlerFactory handlerFactory) 
+            where TEventData : IEventData
         {
             return Register(typeof(TEventData), handlerFactory);
         }
@@ -261,7 +261,8 @@ namespace Abp.Events.Bus
         {
             var handlerFactoryList = new List<EventTypeWithEventHandlerFactories>();
 
-            foreach (var handlerFactory in _handlerFactories.Where(hf => ShouldTriggerEventForHandler(eventType, hf.Key)))
+            foreach (var handlerFactory in _handlerFactories.Where
+                (hf => ShouldTriggerEventForHandler(eventType, hf.Key)))
             {
                 handlerFactoryList.Add(new EventTypeWithEventHandlerFactories(handlerFactory.Key, handlerFactory.Value));
             }

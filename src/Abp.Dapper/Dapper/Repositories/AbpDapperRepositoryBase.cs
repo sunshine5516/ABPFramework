@@ -2,23 +2,22 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-
-using Abp.Dependency;
 using Abp.Domain.Entities;
-using Abp.Domain.Uow;
 using Abp.MultiTenancy;
 using Abp.Reflection.Extensions;
 
 namespace Abp.Dapper.Repositories
 {
     /// <summary>
-    ///     Base class to implement <see cref="IDapperRepository{TEntity,TPrimaryKey}" />.
-    ///     It implements some methods in most simple way.
+    /// <see cref="IDapperRepository{TEntity,TPrimaryKey}" />基类.
+    /// 它以最简单的方式实现了一些方法.
     /// </summary>
     /// <typeparam name="TEntity">The type of the entity.</typeparam>
     /// <typeparam name="TPrimaryKey">The type of the primary key.</typeparam>
     /// <seealso cref="IDapperRepository{TEntity,TPrimaryKey}" />
-    public abstract class AbpDapperRepositoryBase<TEntity, TPrimaryKey> : IDapperRepository<TEntity, TPrimaryKey> where TEntity : class, IEntity<TPrimaryKey>
+    public abstract class AbpDapperRepositoryBase<TEntity, TPrimaryKey> 
+        : IDapperRepository<TEntity, TPrimaryKey> 
+        where TEntity : class, IEntity<TPrimaryKey>
     {
         public static MultiTenancySides? MultiTenancySide { get; private set; }
 

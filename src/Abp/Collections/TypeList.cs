@@ -13,19 +13,19 @@ namespace Abp.Collections
     }
 
     /// <summary>
-    /// Extends <see cref="List{Type}"/> to add restriction a specific base type.
+    /// 扩展 <see cref="IList{Type}"/> 添加限制特定的基本类型。
     /// </summary>
     /// <typeparam name="TBaseType">Base Type of <see cref="Type"/>s in this list</typeparam>
     public class TypeList<TBaseType> : ITypeList<TBaseType>
     {
         /// <summary>
-        /// Gets the count.
+        /// 获取数量.
         /// </summary>
         /// <value>The count.</value>
         public int Count { get { return _typeList.Count; } }
 
         /// <summary>
-        /// Gets a value indicating whether this instance is read only.
+        /// 是否只读.
         /// </summary>
         /// <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
         public bool IsReadOnly { get { return false; } }
@@ -47,7 +47,7 @@ namespace Abp.Collections
         private readonly List<Type> _typeList;
 
         /// <summary>
-        /// Creates a new <see cref="TypeList{T}"/> object.
+        /// 构造函数.
         /// </summary>
         public TypeList()
         {

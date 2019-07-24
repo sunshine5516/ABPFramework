@@ -8,18 +8,18 @@ using Newtonsoft.Json;
 namespace Abp.Web.Mvc.Controllers.Results
 {
     /// <summary>
-    /// This class is used to override returning Json results from MVC controllers.
+    /// 重写MVC controllers的JsonResult.
     /// </summary>
     public class AbpJsonResult : JsonResult
     {
         /// <summary>
-        /// Gets or sets a value indicating whether this JSON result is camel cased on serialization.
+        /// 指示此JSON结果是否基于序列化。
         /// Default: true.
         /// </summary>
         public bool CamelCase { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether this JSON result uses <see cref="Formatting.Indented"/> on serialization.
+        /// 是否在序列化中使用缩进
         /// Default: false.
         /// </summary>
         public bool Indented { get; set; }
